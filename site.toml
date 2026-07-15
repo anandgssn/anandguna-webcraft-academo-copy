@@ -1,0 +1,28 @@
+[site]
+name = "academo"
+url = ""
+original_url = "https://academo.org/"
+description = "Replication of the Academo interactive education site."
+category = "replication"
+
+[site.tech]
+stack = ["Vite", "TypeScript"]
+hosting = ""
+hosting_access_granted = false
+
+[site.assets]
+images = []
+videos = []
+models_3d = []
+svgs = []
+
+[site.prd]
+file = "PRD.md"
+setup = "npm install && npm run dev"
+backend = "Static frontend replica; no backend required unless added during implementation."
+
+[[screenshots]]
+route = "/"
+file = "screenshots/replica-home.png"
+device = "desktop"
+side = "replica"

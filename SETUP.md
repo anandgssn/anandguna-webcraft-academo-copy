@@ -1,17 +1,13 @@
 # Setup & Deployment Instructions
 
-<!-- Fill in each section so a reviewer can run your site locally in under 5 minutes. -->
-
 ## Prerequisites
 
-<!-- What needs to be installed before setup? -->
-
 - Node.js >= 18
-- npm / pnpm / yarn
+- npm
 
 ## Environment Variables
 
-<!-- List every required env var. Copy .env.example to .env and fill in values. -->
+No environment variables are required for the current static frontend scaffold.
 
 ```bash
 cp .env.example .env
@@ -19,39 +15,40 @@ cp .env.example .env
 
 | Variable | Description | How to get it |
 |----------|-------------|---------------|
-| `EXAMPLE_API_KEY` | API key for ... | Sign up at ... |
+| None | No required environment variables yet. | Not applicable |
 
 ## Local Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The site will be available at `http://localhost:3000`.
+The site will be available at the local URL printed by Vite, usually `http://localhost:5173`.
 
 ## Production Build
 
 ```bash
 npm run build
-npm start
+npm run preview
 ```
 
 ## Deployment
 
-<!-- How to deploy to your hosting provider. -->
-
-Example for Vercel:
+Deploy privately to Vercel, then restrict access with a Vercel firewall that allows only Meta IP ranges.
 
 ```bash
+npx vercel
 npx vercel --prod
 ```
 
+After deployment, update `site.toml` with the live URL, set the hosting fields, and transfer project ownership to the AAI Web Craft team.
+
 ## External Services
 
-<!-- List any APIs, databases, or third-party services the site depends on. -->
+- Original target site: https://academo.org/
+- No APIs, databases, or third-party services are required yet.
 
-- None (or list them here)
+## Narration / Walkthrough Videos
+
+Add the pxl.cl walkthrough video URL here before submission.
