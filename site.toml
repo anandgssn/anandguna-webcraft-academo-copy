@@ -1,25 +1,48 @@
 [site]
 name = "academo"
-url = ""
+url = "https://leg10n-webcraft-academo.vercel.app"
 original_url = "https://academo.org/"
-description = "Replication of the Academo interactive education site."
+description = "Focused Web Craft replication of the Academo homepage, demos directory, category pages, functional Logic Gate Simulator, functional 3D Vector Plotter, functional 19 TET Keyboard, functional Virtual Oscilloscope, and functional Flags of Europe pages."
 category = "replication"
 
 [site.tech]
-stack = ["Vite", "TypeScript"]
-hosting = ""
-hosting_access_granted = false
+stack = ["Vite", "TypeScript", "Three.js", "MathJax", "Canvas", "Web Audio"]
+hosting = "Vercel"
+hosting_access_granted = true
 
 [site.assets]
-images = []
+images = [
+  "public/assets/demos/19-tet-keyboard.png",
+  "public/assets/19-tet/keyboard.png",
+  "public/assets/demos/3d-vector-plotter.png",
+  "public/assets/demos/flags-of-europe.png",
+  "public/assets/flags/europe/",
+  "public/assets/demos/logic-gate-graph-paper.png",
+  "public/assets/demos/logic-gate-simulator.png",
+  "public/assets/demos/virtual-oscilloscope.png",
+  "public/assets/logos/html5-weekly.png",
+  "public/assets/logos/academo-favicon.png",
+  "public/assets/logos/academo-mark.png",
+  "public/assets/logos/jce.png",
+  "public/assets/logos/oer.png",
+  "public/assets/logos/science-in-school.png",
+]
 videos = []
 models_3d = []
-svgs = []
+svgs = [
+  "public/assets/logic-symbols/and.svg",
+  "public/assets/logic-symbols/and3.svg",
+  "public/assets/logic-symbols/nand.svg",
+  "public/assets/logic-symbols/nor.svg",
+  "public/assets/logic-symbols/not.svg",
+  "public/assets/logic-symbols/or.svg",
+  "public/assets/logic-symbols/xor.svg",
+]
 
 [site.prd]
 file = "PRD.md"
 setup = "npm install && npm run dev"
-backend = "Static frontend replica; no backend required unless added during implementation."
+backend = "Static frontend replica with client-side routing and DOM filtering; no backend required."
 
 [[screenshots]]
 route = "/"

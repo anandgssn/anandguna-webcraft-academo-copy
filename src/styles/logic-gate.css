@@ -1,0 +1,366 @@
+.logic-gate-simulator {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 20px;
+  align-items: start;
+}
+
+.logic-gate-simulator.is-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  background: var(--color-page);
+}
+
+.logic-toolbar {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  background: var(--color-control);
+}
+
+.logic-gate-simulator.is-fullscreen .logic-toolbar {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 4;
+  display: flex;
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  flex-direction: column;
+  box-shadow: 2px 2px 19px #aaaaaa;
+}
+
+.logic-gate-simulator.is-fullscreen .logic-toolbar label,
+.logic-gate-simulator.is-fullscreen .logic-toolbar button,
+.logic-gate-simulator.is-fullscreen .logic-toolbar select {
+  width: 100%;
+}
+
+.logic-toolbar label,
+.logic-node label {
+  display: grid;
+  gap: 5px;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.logic-toolbar select,
+.logic-node select {
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 6px;
+  background: #ffffff;
+}
+
+.logic-toolbar button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 2px;
+  padding: 10px 12px;
+  background: #dddddd;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logic-toolbar button:hover {
+  background: #8ddece;
+}
+
+.logic-demo-board {
+  position: relative;
+  grid-column: 1;
+  min-height: 500px;
+  overflow: auto;
+  border: 1px solid #d9d9d9;
+  background:
+    url("/assets/demos/logic-gate-graph-paper.png"),
+    #f8f8f8;
+}
+
+.logic-gate-simulator.is-fullscreen .logic-demo-board {
+  grid-column: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+.logic-gate-simulator.is-fullscreen .logic-nodes {
+  min-height: 100%;
+}
+
+.logic-switch {
+  position: relative;
+  display: block;
+  width: 38px;
+  height: 20px;
+  border-radius: 20px;
+  background: #bdc1c8;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.logic-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: left 0.2s;
+}
+
+.logic-switch-toggle {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 32px;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  background: transparent;
+  color: #333333;
+  font: inherit;
+}
+
+.logic-switch-toggle:hover,
+.logic-switch-toggle:focus-visible {
+  background: rgba(44, 62, 80, 0.1);
+}
+
+.logic-input-node.on .logic-switch {
+  background: #2c3e50;
+}
+
+.logic-input-node.on .logic-switch-handle {
+  left: 20px;
+}
+
+.logic-node.on {
+  background: #ffca28;
+}
+
+.logic-switch-state {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #333333;
+}
+
+.logic-node-state {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #555c66;
+}
+
+.logic-node.on .logic-node-state {
+  color: #111111;
+}
+
+.logic-nodes {
+  position: relative;
+  min-width: 620px;
+  min-height: 500px;
+}
+
+.logic-wires {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.logic-wire {
+  fill: none;
+  stroke: #2c3e50;
+  stroke-linecap: round;
+  stroke-width: 3px;
+}
+
+.logic-wire-preview {
+  stroke: #517fad;
+  stroke-dasharray: 8 6;
+}
+
+.logic-node {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 80px;
+  height: 80px;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 4px;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  padding: 8px;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 19px #aaaaaa;
+  color: #000000;
+  cursor: move;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  user-select: none;
+  touch-action: none;
+}
+
+.logic-connectors {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  pointer-events: none;
+}
+
+.logic-connectors-left {
+  left: -8px;
+  top: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.logic-connectors-right {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logic-connectors-count-1 {
+  height: 16px;
+}
+
+.logic-connectors-count-2 {
+  height: 44px;
+}
+
+.logic-connectors-count-3 {
+  height: 58px;
+}
+
+.logic-port {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #1abc9c;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.logic-port-input {
+  background: #1abc9c;
+}
+
+.logic-port-input.connected {
+  background: #1abc9c;
+  cursor: grab;
+}
+
+.logic-port-input.connected:hover,
+.logic-port-input.is-reconnecting {
+  border-color: #1abc9c;
+  background: #1abc9c;
+  box-shadow: 0 0 0 4px rgba(255, 202, 40, 0.3);
+  cursor: grabbing;
+}
+
+.logic-port-output {
+  background: rgba(26, 188, 156, 0.18);
+  cursor: crosshair;
+}
+
+.logic-port-output:hover,
+.logic-port-output.is-connecting {
+  border-color: #1abc9c;
+  background: rgba(26, 188, 156, 0.18);
+}
+
+.logic-node:hover {
+  box-shadow: 2px 2px 19px #444444;
+}
+
+.logic-node.is-dragging {
+  opacity: 0.85;
+  z-index: 5;
+}
+
+.logic-node * {
+  user-select: none;
+}
+
+.logic-node select,
+.logic-node button {
+  cursor: pointer;
+}
+
+.logic-node-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  background: #2c3e50;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.logic-node-close:hover {
+  background: #517fad;
+}
+
+.logic-node-label {
+  max-width: 100%;
+  color: #333333;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.logic-node img {
+  width: 70px;
+  height: 70px;
+  justify-self: center;
+  object-fit: contain;
+}
+
+.truth-table {
+  width: 100%;
+  max-width: 420px;
+  margin: 16px 0 28px;
+  border-collapse: collapse;
+}
+
+.truth-table caption {
+  margin-bottom: 8px;
+  color: var(--color-title);
+  font-weight: 700;
+  text-align: left;
+}
+
+.truth-table th,
+.truth-table td {
+  border-top: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}

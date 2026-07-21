@@ -1,0 +1,189 @@
+.oscilloscope-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 20px;
+  align-items: start;
+}
+
+.oscilloscope-screen {
+  position: relative;
+  min-width: 0;
+  min-height: 280px;
+}
+
+.oscilloscope-screen canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.oscilloscope-controls {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-control);
+}
+
+.oscilloscope-controls label {
+  display: grid;
+  gap: 6px;
+  color: #333333;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.oscilloscope-frequency {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: #333333;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.oscilloscope-controls span,
+.oscilloscope-frequency legend {
+  font-weight: 700;
+}
+
+.oscilloscope-frequency legend {
+  padding: 0;
+}
+
+.oscilloscope-controls select,
+.oscilloscope-controls input[type="range"],
+.oscilloscope-controls input[type="number"] {
+  width: 100%;
+}
+
+.oscilloscope-controls input[type="number"] {
+  min-height: 34px;
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #555555;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  text-align: right;
+  font-weight: 400;
+  line-height: 1.428571429;
+}
+
+.oscilloscope-controls input[type="number"].oscilloscope-gain-value {
+  text-align: left;
+}
+
+.oscilloscope-unit-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px;
+  align-items: stretch;
+}
+
+.oscilloscope-unit {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border: 1px solid #cccccc;
+  border-left: 0;
+  background: #eeeeee;
+  color: #555555;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.oscilloscope-controls select {
+  min-height: 34px;
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #555555;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.428571429;
+}
+
+.oscilloscope-controls input[type="range"] {
+  --range-progress: 50%;
+  appearance: none;
+  height: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  background: linear-gradient(
+    to right,
+    #2c3e50 0,
+    #2c3e50 var(--range-progress),
+    #ffffff var(--range-progress),
+    #ffffff 100%
+  );
+}
+
+.oscilloscope-controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 18px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+.oscilloscope-controls input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 18px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+.oscilloscope-controls input[type="range"]::-moz-range-track {
+  height: 10px;
+  border: 0;
+  background: transparent;
+}
+
+.oscilloscope-controls input[type="range"]:disabled {
+  opacity: 0.55;
+}
+
+.oscilloscope-controls output {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.oscilloscope-toggle {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+}
+
+.oscilloscope-status {
+  min-height: 20px;
+  margin: 0;
+  color: #8a1f11;
+  font-size: 13px;
+}
+
+.oscilloscope-status:empty {
+  display: none;
+}
+
+.oscilloscope-embed-code {
+  display: block;
+  width: min(100%, 620px);
+  min-height: 48px;
+  margin: 8px 0 20px;
+  border: 1px solid #cccccc;
+  padding: 8px;
+  font: inherit;
+}
+
+@media (max-width: 950px) {
+  .oscilloscope-layout {
+    grid-template-columns: 1fr;
+  }
+}

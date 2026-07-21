@@ -3,31 +3,31 @@
   "rubrics": [
     {
       "id": 1,
-      "criterion": "Homepage presents Academo's demo directory structure with recognizable category navigation, featured demo cards, and concise educational descriptions.",
+      "criterion": "Homepage presents Academo's centered white content wrapper, navy two-tier header, subject navigation, popular demo area, publication logo strip, and concise educational copy.",
       "type": "design",
       "priority": "must-have"
     },
     {
       "id": 2,
-      "criterion": "At least one flagship interactive science or math demo includes live controls that update the visualization without a page reload.",
+      "criterion": "The /demos page presents exactly the scoped demo set: Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator, 19 TET Keyboard, and Flags of Europe.",
       "type": "CUJ",
       "priority": "must-have"
     },
     {
       "id": 3,
-      "criterion": "Demo cards and subject pages preserve the clean Academo visual style, including restrained typography, light backgrounds, thin dividers, and teal accent color.",
+      "criterion": "Reusable demo cards preserve the original Academo card pattern: one 260 x 170 thumbnail image, one title, image opacity hover, and orange title hover feedback.",
       "type": "design",
       "priority": "must-have"
     },
     {
       "id": 4,
-      "criterion": "Search or filtering allows users to narrow demos by subject or keyword and updates the visible results immediately.",
+      "criterion": "Category pages route locally and show the correct assigned demos, including /physics listing Virtual Oscilloscope and /flashcards listing Flags of Europe.",
       "type": "CUJ",
       "priority": "must-have"
     },
     {
       "id": 5,
-      "criterion": "Responsive layouts keep navigation, demo cards, and interactive controls usable at desktop and mobile viewport sizes without horizontal overflow.",
+      "criterion": "The interactive demo pages support core local behavior: Logic Gate Simulator provides draggable/connectable nodes and reference tables, 3D Vector Plotter provides editable vectors and computed vectors, 19 TET Keyboard provides playable Web Audio notes, Virtual Oscilloscope provides generated/live waveform controls, and Flags of Europe provides flippable/shuffleable flashcards with local flag assets.",
       "type": "design",
       "priority": "must-have"
     }

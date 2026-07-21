@@ -1,0 +1,110 @@
+.vector-plotter-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 20px;
+  align-items: start;
+}
+
+.vector-plotter-stage {
+  min-width: 0;
+}
+
+.vector-plotter-canvas {
+  min-height: 280px;
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+}
+
+.vector-plotter-canvas canvas {
+  display: block;
+}
+
+.vector-plotter-readout {
+  display: block;
+  margin-top: 10px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.vector-plotter-readout:empty {
+  display: none;
+}
+
+.vector-plotter-controls {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-control);
+}
+
+.vector-control-list {
+  display: grid;
+  gap: 12px;
+}
+
+.vector-field,
+.vector-toggle {
+  display: grid;
+  gap: 6px;
+  color: #333333;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.vector-toggle {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+}
+
+.vector-field span {
+  font-weight: 700;
+}
+
+.vector-field input {
+  min-height: 36px;
+  border: 1px solid #cccccc;
+  padding: 7px 8px;
+  background: #ffffff;
+}
+
+.vector-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.vector-actions button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 2px;
+  padding: 9px 12px;
+  background: #dddddd;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vector-actions button:hover {
+  background: #8ddece;
+}
+
+.vector-error {
+  min-height: 20px;
+  margin: 0;
+  color: #8a1f11;
+  font-size: 13px;
+}
+
+.vector-formula {
+  overflow-x: auto;
+  max-width: 880px;
+  margin: 12px 0 22px;
+  color: #222222;
+  white-space: nowrap;
+}
+
+@media (max-width: 950px) {
+  .vector-plotter-layout {
+    grid-template-columns: 1fr;
+  }
+}

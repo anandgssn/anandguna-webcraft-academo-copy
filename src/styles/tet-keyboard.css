@@ -1,0 +1,57 @@
+.tet-keyboard {
+  display: grid;
+  gap: 12px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 18px 0;
+}
+
+.tet-keyboard-svg {
+  display: block;
+  width: 100%;
+  max-height: 391px;
+  touch-action: none;
+  user-select: none;
+}
+
+.tet-keyboard-svg rect {
+  fill: #ffffff;
+  stroke: #000000;
+}
+
+.tet-keyboard-svg rect {
+  cursor: pointer;
+  outline: none;
+}
+
+.tet-keyboard-svg rect[data-colour="black"] {
+  fill: #333333;
+}
+
+.tet-keyboard-svg rect[data-colour="grey"] {
+  fill: grey;
+}
+
+.tet-keyboard-svg rect:hover,
+.tet-keyboard-svg rect:focus-visible,
+.tet-keyboard-svg rect.is-active {
+  fill: lightblue !important;
+}
+
+.tet-keyboard-status {
+  min-height: 20px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.tet-keyboard-status:empty {
+  display: none;
+}
+
+.tet-layout-image {
+  display: block;
+  width: min(100%, 500px);
+  height: auto;
+  margin: 12px 0 24px;
+}
