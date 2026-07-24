@@ -1,7 +1,7 @@
 .tet-keyboard {
   display: grid;
   gap: 12px;
-  max-width: 920px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 18px 0;
 }

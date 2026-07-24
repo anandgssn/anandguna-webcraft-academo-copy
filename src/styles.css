@@ -6,5 +6,16 @@
 @import "./styles/vector-plotter.css";
 @import "./styles/tet-keyboard.css";
 @import "./styles/virtual-oscilloscope.css";
+@import "./styles/amplitude-modulation.css";
+@import "./styles/rot13.css";
+@import "./styles/hypocycloid.css";
+@import "./styles/monte-carlo-pi.css";
+@import "./styles/azimuth-calculator.css";
+@import "./styles/colour-temperature.css";
+@import "./styles/electric-field.css";
+@import "./styles/simple-pendulum.css";
+@import "./styles/geodesics.css";
+@import "./styles/capital-cities.css";
+@import "./styles/us-states-flashcards.css";
 @import "./styles/flags-of-europe.css";
 @import "./styles/responsive.css";

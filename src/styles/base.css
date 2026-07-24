@@ -32,6 +32,10 @@ body {
   margin: 0;
 }
 
+[data-mathjax-loading="true"] {
+  visibility: hidden;
+}
+
 button,
 input {
   font: inherit;

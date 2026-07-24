@@ -1,0 +1,16 @@
+.rot13-layout { display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:20px; align-items:start; }
+.rot13-workspace { min-width:0; margin-bottom:20px; }
+.rot13-workspace textarea { box-sizing:content-box; width:80%; height:200px; border:1px solid #767676; border-radius:0; padding:20px; color:#000; background:#fff; font-family:"Open Sans",sans-serif; font-size:16px; font-weight:400; line-height:normal; resize:both; }
+.rot13-controls { box-sizing:border-box; width:240px; padding:20px; margin-bottom:20px; background:#efefef; }
+.rot13-controls button { width:200px; min-height:38px; border:0; border-radius:2px; padding:10px; background:#ddd; color:#333; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 1px 2px rgba(0,0,0,.3); }
+.rot13-controls button:hover { background:#8ddece; }
+.rot13-description { max-width:700px; }
+.rot13-table-wrap { overflow-x:auto; margin-bottom:20px; }
+.rot13-table { width:100%; border:1px solid #ddd; border-left:0; border-collapse:collapse; }
+.rot13-table td { min-width:34px; border-top:1px solid #ddd; border-left:1px solid #ddd; padding:8px; font-size:18px; line-height:20px; text-align:center; }
+.rot13-table tr:first-child td { border-top:0; }
+.demo-tags { display:block; margin:0 0 20px; }
+.demo-tags a { display:inline-block; min-height:0; margin:0 10px 10px 0; padding:5px 10px; }
+.visually-hidden { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+@media(max-width:950px){.rot13-layout{grid-template-columns:1fr}.rot13-controls{width:100%}}
+@media(max-width:600px){.rot13-workspace textarea{box-sizing:border-box;width:100%;resize:vertical}.rot13-controls button{width:100%}.rot13-table td{min-width:28px;padding:6px;font-size:14px}}

@@ -2,7 +2,7 @@
 name = "academo"
 url = "https://leg10n-webcraft-academo.vercel.app"
 original_url = "https://academo.org/"
-description = "Focused Web Craft replication of the Academo homepage, demos directory, category pages, functional Logic Gate Simulator, functional 3D Vector Plotter, functional 19 TET Keyboard, functional Virtual Oscilloscope, and functional Flags of Europe pages."
+description = "Academo educational demo site with category pages and sixteen functional interactive demos including US States Map Flashcards and Capital Cities Map."
 category = "replication"
 
 [site.tech]
@@ -13,9 +13,23 @@ hosting_access_granted = true
 [site.assets]
 images = [
   "public/assets/demos/19-tet-keyboard.png",
+  "public/assets/demos/amplitude-modulation.png",
+  "public/assets/demos/rot-13-cipher.png",
   "public/assets/19-tet/keyboard.png",
   "public/assets/demos/3d-vector-plotter.png",
   "public/assets/demos/flags-of-europe.png",
+  "public/assets/demos/hypocycloid.png",
+  "public/assets/demos/estimating-pi-monte-carlo.png",
+  "public/assets/demos/azimuth-calculator.png",
+  "public/assets/demos/azimuth-altitude.svg",
+  "public/assets/demos/colour-temperature-relationship.png",
+  "public/assets/demos/electric-field-line-simulator.png",
+  "public/assets/demos/simple-pendulum.png",
+  "public/assets/demos/geodesics.png",
+  "public/assets/demos/capital-cities-map.png",
+  "public/assets/demos/us-states-map.png",
+  "public/assets/us-states/",
+  "public/assets/demos/graph-paper-centered.png",
   "public/assets/flags/europe/",
   "public/assets/demos/logic-gate-graph-paper.png",
   "public/assets/demos/logic-gate-simulator.png",
@@ -42,7 +56,7 @@ svgs = [
 [site.prd]
 file = "PRD.md"
 setup = "npm install && npm run dev"
-backend = "Static frontend replica with client-side routing and DOM filtering; no backend required."
+backend = "Static Academo frontend with client-side routing and DOM filtering; no backend required."
 
 [[screenshots]]
 route = "/"

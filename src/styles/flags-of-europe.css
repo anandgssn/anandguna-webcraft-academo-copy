@@ -31,17 +31,27 @@
 
 .flags-actions button {
   display: inline-block;
+  box-sizing: border-box;
+  height: 34px;
   min-height: 0;
   margin: 0 10px 10px 0;
   padding: 5px 10px;
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   text-transform: capitalize;
 }
 
 .flags-actions button span {
   display: inline;
+  width: auto;
+  height: auto;
   min-height: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
 }
 
 .flags-action-icon {
@@ -125,7 +135,7 @@
 .flags-card-face img {
   max-width: calc(100% - 70px);
   height: calc(80% - 20px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 0;
   object-fit: contain;
 }
 
@@ -161,17 +171,16 @@
   position: absolute;
   top: 50%;
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   place-items: center;
   overflow: hidden;
-  border: 1px solid #020535;
-  border-radius: 50%;
-  background: #020535;
+  border: 0;
+  background: transparent;
   color: #ffffff;
   cursor: pointer;
   font-size: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+  box-shadow: none;
   transform: translateY(-50%);
 }
 
@@ -180,11 +189,24 @@
   top: 50%;
   left: 50%;
   display: block;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid currentColor;
-  border-left: 2px solid currentColor;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  border-top: 4px solid currentColor;
+  border-left: 4px solid currentColor;
   content: "";
+}
+
+.flags-nav::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(2, 5, 53, 0.75);
+  content: "";
+  transform: translate(-50%, -50%);
 }
 
 .flags-nav-prev {
@@ -204,16 +226,19 @@
 }
 
 .flags-nav:hover:not(:disabled) {
-  border-color: #020535;
-  background: #11172b;
+  background: transparent;
+  color: #ffffff;
+}
+
+.flags-nav:hover:not(:disabled)::after {
+  background: var(--color-warm);
 }
 
 .flags-nav:disabled {
-  border-color: #cccccc;
-  background: #dddddd;
-  color: #777777;
+  background: transparent;
+  color: #ffffff;
   cursor: default;
-  opacity: 0.75;
+  opacity: 0.25;
 }
 
 .flags-slide-status {
@@ -232,10 +257,11 @@
 
 .flags-skip {
   position: relative;
-  top: 4px;
+  top: 0;
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 44px;
+  height: 44px;
+  margin: -11px;
   border: 0;
   padding: 0;
   background: transparent;
@@ -252,34 +278,34 @@
 }
 
 .flags-skip::before {
-  width: 2px;
-  height: 16px;
+  width: 1px;
+  height: 11px;
   background: currentColor;
 }
 
 .flags-skip::after {
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid currentColor;
+  border-left: 1px solid currentColor;
 }
 
 .flags-skip-start::before {
-  left: 3px;
+  left: 16px;
 }
 
 .flags-skip-start::after {
-  left: 7px;
-  border-right: 12px solid currentColor;
+  left: 21px;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .flags-skip-end::before {
-  right: 3px;
+  right: 16px;
 }
 
 .flags-skip-end::after {
-  right: 7px;
-  border-left: 12px solid currentColor;
+  right: 21px;
+  transform: translateY(-50%) rotate(135deg);
 }
 
 .flags-skip:hover,
@@ -326,10 +352,30 @@
 
 .flags-modal-header h2 {
   margin: 0;
-  font-size: 24px;
+  color: #212529;
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.flags-modal-header button,
+.flags-modal-header .flags-modal-close {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #000000;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.flags-modal-header .flags-modal-close:hover {
+  background: transparent;
+  opacity: 0.8;
+}
+
 .flags-table button {
   border: 0;
   border-radius: 2px;
@@ -341,7 +387,6 @@
   cursor: pointer;
 }
 
-.flags-modal-header button:hover,
 .flags-table button:hover {
   background: #8ddece;
 }

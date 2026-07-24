@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "criterion": "The /demos page presents exactly the scoped demo set: Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator, 19 TET Keyboard, and Flags of Europe.",
+      "criterion": "The /demos page presents all sixteen scoped demos, including US States Map Flashcards, Capital Cities Map, and Geodesics on the Earth.",
       "type": "CUJ",
       "priority": "must-have"
     },
@@ -21,13 +21,13 @@
     },
     {
       "id": 4,
-      "criterion": "Category pages route locally and show the correct assigned demos, including /physics listing Virtual Oscilloscope and /flashcards listing Flags of Europe.",
+      "criterion": "Dedicated Engineering pages assign ROT-13 to Computing, Logic Gate Simulator to Electronics, and Amplitude Modulation to Signals.",
       "type": "CUJ",
       "priority": "must-have"
     },
     {
       "id": 5,
-      "criterion": "The interactive demo pages support core local behavior: Logic Gate Simulator provides draggable/connectable nodes and reference tables, 3D Vector Plotter provides editable vectors and computed vectors, 19 TET Keyboard provides playable Web Audio notes, Virtual Oscilloscope provides generated/live waveform controls, and Flags of Europe provides flippable/shuffleable flashcards with local flag assets.",
+      "criterion": "The interactive demo pages support their core local behavior, including draggable electric charges and computed field lines, Kelvin-to-RGB conversion, API-free azimuth bearings, Monte Carlo Pi estimation, logic nodes, 3D vectors, hypocycloid animation, keyboards, oscilloscope controls, amplitude modulation, and flashcards.",
       "type": "design",
       "priority": "must-have"
     }

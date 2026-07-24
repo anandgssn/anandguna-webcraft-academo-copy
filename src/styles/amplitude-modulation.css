@@ -1,0 +1,33 @@
+.amplitude-layout { display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:20px; align-items:start; }
+.amplitude-plot { min-width:0; margin-bottom:20px; background:#fff; }
+.amplitude-plot canvas { display:block; }
+.amplitude-controls { box-sizing:border-box; width:240px; padding:20px; margin-bottom:20px; background:#efefef; }
+.amplitude-interface { width:200px; padding:0 0 20px; }
+.amplitude-interface label:first-child,.amplitude-interface>span { display:block; margin:0 0 5px; padding-top:6px; color:#333; font-size:13px; font-weight:700; line-height:normal; }
+.amplitude-math-label { display:inline-block; font-size:121%; font-weight:400; }
+.amplitude-math-label mjx-container { margin:0 !important; }
+.amplitude-interface:first-child label:first-child { padding-top:0; }
+.amplitude-number-row { display:flex; width:200px; }
+.amplitude-number-row input { box-sizing:border-box; width:100%; height:34px; border:1px solid #ccc; padding:6px 12px; background:#fff; color:#555; font:400 14px/20px "Open Sans",sans-serif; text-align:right; }
+.amplitude-number-row span { display:grid; flex:0 0 42px; place-items:center; border:1px solid #ccc; border-left:0; background:#eee; color:#555; font-size:14px; }
+.amplitude-interface input[type="range"] { --range-progress:0%; --range-color:#2c3e50; box-sizing:border-box; width:200px; height:11px; margin-top:15px; appearance:none; border:1px solid #ccc; border-radius:0; background:linear-gradient(to right,var(--range-color) 0,var(--range-color) var(--range-progress),#fff var(--range-progress),#fff 100%); }
+.amplitude-interface input[type="range"]::-webkit-slider-thumb { width:18px; height:18px; margin-top:-1px; appearance:none; border:1px solid #ccc; border-radius:0; background:#eee; cursor:pointer; }
+.amplitude-interface input[type="range"]::-moz-range-thumb { width:18px; height:18px; border:1px solid #ccc; border-radius:0; background:#eee; cursor:pointer; }
+.amplitude-zoom { height:77px; }
+.amplitude-checkbox { height:81px; }
+.amplitude-check { position:relative; display:block; width:22px; height:22px; cursor:pointer; }
+.amplitude-check input { position:absolute; opacity:0; }
+.amplitude-check span { position:absolute; inset:0; box-sizing:border-box; border:1px solid #ccc; background:#fff; }
+.amplitude-check input:checked+span::after { position:absolute; top:4px; left:4px; width:9px; height:5px; border:3px solid #f90; border-top:0; border-right:0; content:""; transform:rotate(-45deg); }
+.amplitude-codepen { height:38px; padding:0; }
+.amplitude-codepen a { display:flex; box-sizing:border-box; width:200px; height:38px; align-items:center; justify-content:center; gap:6px; padding:10px; background:#ddd; color:#333; font-size:13px; font-weight:700; line-height:18px; text-align:center; text-decoration:none; }
+.external-link-icon { position:relative; display:inline-block; width:13px; height:13px; box-sizing:border-box; border:1.5px solid currentColor; }
+.external-link-icon::before { position:absolute; top:-3px; right:-3px; width:7px; height:7px; border-top:1.5px solid currentColor; border-right:1.5px solid currentColor; background:#ddd; content:""; }
+.external-link-icon::after { position:absolute; top:1px; right:0; width:8px; height:1.5px; background:currentColor; content:""; transform:rotate(-45deg); transform-origin:right center; }
+.amplitude-codepen a:hover { background:#8ddece; color:#333; }
+.amplitude-codepen a:hover .external-link-icon::before { background:#8ddece; }
+.amplitude-modulation + .demo-description .vector-formula { margin:0; }
+.amplitude-modulation + .demo-description .vector-formula mjx-container[display="true"] { margin:9.6875px 0 !important; }
+.category-filters { justify-content:flex-start; margin-top:0; }
+@media(max-width:950px){.amplitude-layout{grid-template-columns:1fr}.amplitude-controls{width:100%;display:flex;flex-wrap:wrap;gap:0 60px}.amplitude-interface{flex:0 0 200px}}
+@media(max-width:600px){.amplitude-controls{display:block}.amplitude-interface{width:100%}.amplitude-number-row,.amplitude-interface input[type="range"],.amplitude-codepen a{width:100%}}

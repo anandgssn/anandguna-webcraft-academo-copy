@@ -1,3 +1,6 @@
+import { animateVisibleFlashcard } from "./flashcardAnimation";
+import { renderFlashcardTable } from "./flashcardTable";
+
 type Flashcard = {
   id: number;
   country: string;
@@ -134,6 +137,7 @@ function shuffleCards(cards: FlashcardState[]) {
 }
 
 export function mountFlagsOfEurope(root: HTMLElement) {
+  const actionsRoot = root.closest(".demo-detail")?.querySelector<HTMLElement>("[data-flashcard-actions]");
   preloadFlagsOfEuropeAssets();
 
   let cards = readStoredState();
@@ -205,29 +209,12 @@ export function mountFlagsOfEurope(root: HTMLElement) {
       })
       .join("");
 
-    return `
-      <div class="flags-modal-backdrop" data-action="close-panel"></div>
-      <section class="flags-modal" role="dialog" aria-modal="true" aria-labelledby="flags-panel-title">
-        <header class="flags-modal-header">
-          <h2 id="flags-panel-title">All flashcards</h2>
-          <button type="button" data-action="close-panel" aria-label="Close all flashcards panel">Close</button>
-        </header>
-        <div class="flags-modal-body">
-          <table class="flags-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Country</th>
-                <th>Flag</th>
-                <th>Visible</th>
-                <th>Shown side</th>
-              </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>
-      </section>
-    `;
+    return renderFlashcardTable({
+      closeAction: "close-panel",
+      labelledBy: "flags-panel-title",
+      headers: ["#", "Country", "Flag", "Visible", "Shown side"],
+      rows
+    });
   }
 
   function render() {
@@ -241,12 +228,6 @@ export function mountFlagsOfEurope(root: HTMLElement) {
 
     root.innerHTML = `
       <div class="flags-flashcards">
-        <div class="flags-actions tags" aria-label="Flashcard controls">
-          <button type="button" data-action="open-panel"><span class="material-symbols-outlined flags-action-icon" aria-hidden="true">view_list</span><span>View All Terms</span></button>
-          <button type="button" data-action="shuffle"><span class="material-symbols-outlined flags-action-icon" aria-hidden="true">shuffle</span><span>Shuffle</span></button>
-          <button type="button" data-action="flip-all"><span class="material-symbols-outlined flags-action-icon" aria-hidden="true">sync</span><span>Flip All Cards</span></button>
-          <button type="button" data-action="reset"><span class="material-symbols-outlined flags-action-icon" aria-hidden="true">settings_backup_restore</span><span>Reset</span></button>
-        </div>
         <section class="flags-stage" aria-label="Flags of Europe flashcards">
           <button class="flags-nav flags-nav-prev" type="button" data-action="previous" aria-label="Previous flashcard"${currentIndex === 0 ? " disabled" : ""}>Previous</button>
           <div class="flags-carousel" aria-live="polite">${cardMarkup}</div>
@@ -282,6 +263,8 @@ export function mountFlagsOfEurope(root: HTMLElement) {
         ...card,
         faceVisible: card.faceVisible === "front" ? "back" : "front"
       }));
+      animateVisibleFlashcard(root);
+      return;
     } else if (action === "shuffle") {
       cards = shuffleCards(cards);
       saveState(cards);
@@ -291,6 +274,8 @@ export function mountFlagsOfEurope(root: HTMLElement) {
         faceVisible: card.faceVisible === "front" ? "back" : "front"
       }));
       saveState(cards);
+      animateVisibleFlashcard(root);
+      return;
     } else if (action === "reset") {
       cards = createInitialState();
       currentIndex = 0;
@@ -325,6 +310,14 @@ export function mountFlagsOfEurope(root: HTMLElement) {
     if (actionTarget && action) {
       handleAction(action, actionTarget);
     }
+  });
+
+  actionsRoot?.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const actionTarget = target.closest<HTMLElement>("[data-action]");
+    const action = actionTarget?.dataset.action;
+    if (actionTarget && action) handleAction(action, actionTarget);
   });
 
   root.addEventListener("change", (event) => {

@@ -1,0 +1,119 @@
+.pendulum-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 820px) 240px;
+  gap: 20px;
+  align-items: start;
+}
+.pendulum-stage {
+  height: 546px;
+  background: url("/assets/demos/graph-paper-centered.png") 10px -25px repeat;
+}
+.pendulum-stage canvas {
+  display: block;
+}
+.pendulum-controls {
+  box-sizing: border-box;
+  width: 240px;
+  min-height: 357px;
+  padding: 20px;
+  background: #efefef;
+}
+.pendulum-control {
+  height: 108px;
+}
+.pendulum-control > label {
+  display: block;
+  height: 18px;
+  margin: 3px 0 5px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+}
+.pendulum-control > div {
+  display: flex;
+}
+.pendulum-control input[type="number"] {
+  box-sizing: border-box;
+  width: 136px;
+  height: 34px;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+}
+.pendulum-control span {
+  display: flex;
+  box-sizing: border-box;
+  width: 64px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-left: 0;
+  background: #eee;
+  color: #555;
+  font-size: 14px;
+}
+.pendulum-control input[type="range"] {
+  width: 200px;
+  height: 18px;
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background: transparent;
+}
+.pendulum-control input[type="range"]::-webkit-slider-runnable-track {
+  height: 11px;
+  border: 1px solid #ccc;
+  background: linear-gradient(
+    to right,
+    var(--range-color) 0 var(--range-progress),
+    #fff var(--range-progress) 100%
+  );
+}
+.pendulum-control input[type="range"]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  margin-top: -5px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  appearance: none;
+  background: #eee;
+}
+.pendulum-button {
+  height: 60px;
+}
+.pendulum-button:last-child {
+  height: 38px;
+}
+.pendulum-button button {
+  width: 200px;
+  height: 38px;
+  border: 0;
+  border-radius: 2px;
+  padding: 10px;
+  background: #ddd;
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.pendulum-button button:hover:not(:disabled) {
+  background: #8ddece;
+}
+.pendulum-description {
+  max-width: 700px;
+  margin-top: 60px;
+}
+@media (max-width: 900px) {
+  .pendulum-layout {
+    grid-template-columns: 1fr;
+  }
+  .pendulum-controls {
+    width: 100%;
+    min-height: 0;
+  }
+}

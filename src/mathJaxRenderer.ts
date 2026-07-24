@@ -54,15 +54,33 @@ export async function renderMathJax(root: ParentNode = document) {
     return;
   }
 
-  const mathJax = await loadMathJax();
+  formulaBlocks.forEach((block) => {
+    block.dataset.mathjaxLoading = "true";
+  });
+
+  let mathJax: MathJaxConfig;
+  try {
+    mathJax = await loadMathJax();
+  } catch (error) {
+    formulaBlocks.forEach((block) => delete block.dataset.mathjaxLoading);
+    throw error;
+  }
   const connectedBlocks = formulaBlocks.filter((block) => block.isConnected);
 
   if (connectedBlocks.length === 0) {
     return;
   }
 
-  await mathJax.typesetPromise?.(connectedBlocks);
-  connectedBlocks.forEach((block) => {
-    block.dataset.mathjaxRendered = "true";
-  });
+  try {
+    const typesetting = mathJax.typesetPromise?.(connectedBlocks) ?? Promise.resolve();
+    await Promise.race([
+      typesetting,
+      new Promise<void>((resolve) => window.setTimeout(resolve, 1000))
+    ]);
+  } finally {
+    connectedBlocks.forEach((block) => {
+      block.dataset.mathjaxRendered = "true";
+      delete block.dataset.mathjaxLoading;
+    });
+  }
 }
