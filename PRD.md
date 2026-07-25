@@ -4,7 +4,16 @@
 
 Academo is a free directory of interactive educational demonstrations for students, teachers, and self-guided learners. No registration, no fees, no backend services. Six subject areas — Engineering, Geography, Maths, Music, Physics, Flashcards — each with multiple interactive demos organized into subcategories. The site is a static single-page application.
 
-Reference screenshots in `screenshots/` capture the target visual style for homepage, demo directory, category pages, subcategory pages, and each demo detail page.
+Reference screenshots in `screenshots/` capture the target visual style:
+
+| File | Route | Device |
+|------|-------|--------|
+| `replica-home.png` | `/` homepage | desktop |
+| `replica-home-mobile.png` | `/` homepage | mobile 390×844 |
+| `replica-physics.png` | `/physics` category page | desktop |
+| `replica-flashcards.png` | `/flashcards/flags-of-europe` | desktop |
+
+A narrated walkthrough video covering all sixteen demos, category and subcategory routes, flashcard modals, canvas animations, form interactions, and mobile responsive behavior should accompany the submission.
 
 ---
 
@@ -266,6 +275,21 @@ Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined loaded f
 
 ---
 
-## 7. Intentional scope exclusions
+## 7. External links and attributions
 
-No user accounts, registration, or authentication. No backend APIs, databases, or server-side rendering. No analytics, tracking, or ad scripts. No social embeds, share buttons, or comments. No donation links beyond the existing sponsor spacer placeholder. No external outbound links in the application surface except mailto links and browser-vendor cookie help links on the cookie policy page. No video, 3D model files, or prerecorded audio assets. No email sending backend — contact and submit idea use mailto handoff only. No demo functionality beyond the sixteen specified interactive demos.
+The application surface includes the following outbound links, each opening in a new tab with `rel="noreferrer"` except where noted:
+
+- **CodePen** — on the Amplitude Modulation demo page, an "Open with CodePen" link to `https://codepen.io/pen/` with tooltip "CodePen is a free online tool for editing and writing code."
+- **OpenStreetMap attribution** — on the Azimuth Calculator, Geodesics on the Earth, and Capital Cities Map demos, the Leaflet tile layer attribution links to `https://www.openstreetmap.org/copyright` crediting OpenStreetMap contributors.
+- **GitHub flag credits** — in the Flags of Europe useful notes section, a credits link to `https://github.com/hampusborgos/country-flags` attributing the flag image source.
+- **Wikimedia state-map credits** — in the US States Map Flashcards credits section, a link to the Wikimedia Commons page for the public-domain blank US map SVG.
+- **Browser cookie help** — on the Cookie Policy page, links to official support documents for Chrome (`support.google.com`), Safari (`support.apple.com`), Firefox (`support.mozilla.org`), and Internet Explorer (`support.microsoft.com`).
+- **mailto links** — on Contact, Submit an idea, Privacy Policy, and Cookie Policy pages, mailto links to `hello@academo.org` open the user's email client; these are not external web links.
+
+All other navigation stays within local routes.
+
+---
+
+## 8. Intentional scope exclusions
+
+No user accounts, registration, or authentication. No backend APIs, databases, or server-side rendering. No analytics, tracking, or ad scripts. No social embeds, share buttons, or comments. No donation links beyond the existing sponsor spacer placeholder. No video, 3D model files, or prerecorded audio assets. No email sending backend — contact and submit idea use mailto handoff only. No demo functionality beyond the sixteen specified interactive demos.

@@ -322,33 +322,11 @@
   line-height: 1.2;
 }
 
-.demo-placeholder {
-  display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
-  max-width: 820px;
-  padding: 24px;
-  background: #f8f8f8;
-}
-
-.demo-placeholder img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #c8c8c8;
-}
-
-.demo-placeholder h2 {
-  margin-top: 0;
-}
-
-.demo-placeholder a,
 .not-found a {
   color: var(--color-title);
   font-weight: 800;
 }
 
-.demo-placeholder a:hover,
 .not-found a:hover {
   color: var(--color-warm);
 }

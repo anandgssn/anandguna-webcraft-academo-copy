@@ -73,7 +73,7 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 - The contact form uses a client-side `mailto:` handoff and does not send email through a backend.
 - The Submit an idea page replaces the original Disqus comments with a direct `mailto:hello@academo.org` link and does not store submissions.
 - Footer Privacy Policy and Cookie Policy routes describe Academo's static hosting, local browser state, mailto handoffs, and OpenStreetMap tile requests; they do not claim advertising or analytics integrations.
-- The only third-party runtime requests are Google Fonts for `Open Sans` and `Material Symbols Outlined`; Three.js and MathJax are bundled from local npm dependencies.
+- Third-party runtime requests are limited to Google Fonts for `Open Sans` and `Material Symbols Outlined`, plus attributed OpenStreetMap tiles on the three map demos. Three.js and MathJax are bundled from local npm dependencies.
 - The Amplitude Modulation page includes an explicit user-initiated link to CodePen's new-pen editor; no source code or user data is posted automatically.
 - Deployment is expected to use private Vercel hosting with the Web Craft Meta-IP firewall rule.
 
@@ -84,7 +84,7 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 - Academo avoids unnecessary outbound links in the app surface. Navigation points to local pages or local page sections so there are no broken external routes.
 - The original target uses Open Sans, a navy header, teal accent, orange hover color, shaded page background, centered white wrapper, tag pills, thumbnail grids, and compact grey control panels; these visual traits are mirrored in the local CSS.
 - Demo cards are reusable thumbnail components matching the original Academo card pattern: one 260 x 170 image and one title, with no description text inside the card.
-- Cut scope: geography, other full demo functionality, ads, social embeds, external donation/sponsor links, comments, and analytics.
+- Cut scope: demos outside the documented sixteen-demo catalog, ads, social embeds, external donation/sponsor links, comments, and analytics.
 
 ## Narration / Walkthrough Videos
 

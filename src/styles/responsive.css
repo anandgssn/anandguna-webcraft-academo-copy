@@ -28,10 +28,6 @@
     grid-template-columns: 1fr;
   }
 
-  .demo-placeholder {
-    grid-template-columns: 1fr;
-  }
-
   .logic-gate-simulator {
     grid-template-columns: 1fr;
   }

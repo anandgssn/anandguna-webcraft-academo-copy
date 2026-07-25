@@ -27,8 +27,8 @@
     },
     {
       "id": 5,
-      "criterion": "The interactive demo pages support their core local behavior, including draggable electric charges and computed field lines, Kelvin-to-RGB conversion, API-free azimuth bearings, Monte Carlo Pi estimation, logic nodes, 3D vectors, hypocycloid animation, keyboards, oscilloscope controls, amplitude modulation, and flashcards.",
-      "type": "design",
+      "criterion": "A visitor can open either flashcard demo, flip and navigate cards, shuffle the deck, toggle all card faces, reset the deck, and use the All Terms modal to hide or restore cards.",
+      "type": "CUJ",
       "priority": "must-have"
     }
   ]

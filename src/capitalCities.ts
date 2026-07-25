@@ -37,10 +37,32 @@ const CAPITALS: Array<[string,string,number,number]> = [
   ,["Suva","Fiji",-18.1248,178.4501],["Yaren","Nauru",-0.5477,166.9209]
 ];
 
-export function mountCapitalCities(root:HTMLElement){
-  root.innerHTML='<div class="capital-cities-map" aria-label="Interactive world map of capital cities"></div>';
-  const element=root.querySelector<HTMLElement>(".capital-cities-map")!,map=L.map(element,{worldCopyJump:true}).setView([20,0],2);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:19}).addTo(map);
-  CAPITALS.forEach(([city,country,lat,lng])=>{const marker=L.circleMarker([lat,lng],{radius:5,color:"#fff",weight:1,fillColor:"#d33",fillOpacity:.9}).addTo(map);marker.bindPopup(`<strong>${city}</strong>, ${country}<br><button type="button" class="capital-zoom">Zoom In</button>`);marker.on("popupopen",()=>{const button=marker.getPopup()?.getElement()?.querySelector<HTMLButtonElement>(".capital-zoom");button?.addEventListener("click",()=>map.setView([lat,lng],8),{once:true})})});
-  new ResizeObserver(()=>map.invalidateSize()).observe(element);
+export function mountCapitalCities(root: HTMLElement) {
+  root.innerHTML = '<div class="capital-cities-map" aria-label="Interactive world map of capital cities"></div>';
+  const mapElement = root.querySelector<HTMLElement>(".capital-cities-map")!;
+  const map = L.map(mapElement, { worldCopyJump: true }).setView([20, 0], 2);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  CAPITALS.forEach(([city, country, latitude, longitude]) => {
+    const marker = L.circleMarker([latitude, longitude], {
+      radius: 5,
+      color: "#fff",
+      weight: 1,
+      fillColor: "#d33",
+      fillOpacity: 0.9
+    }).addTo(map);
+    marker.bindPopup(
+      `<strong>${city}</strong>, ${country}<br><button type="button" class="capital-zoom">Zoom In</button>`
+    );
+    marker.on("popupopen", () => {
+      const button = marker.getPopup()?.getElement()?.querySelector<HTMLButtonElement>(".capital-zoom");
+      button?.addEventListener("click", () => map.setView([latitude, longitude], 8), { once: true });
+    });
+  });
+
+  new ResizeObserver(() => map.invalidateSize()).observe(mapElement);
 }

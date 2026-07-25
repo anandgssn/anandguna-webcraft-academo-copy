@@ -63,3 +63,21 @@ route = "/"
 file = "screenshots/replica-home.png"
 device = "desktop"
 side = "replica"
+
+[[screenshots]]
+route = "/physics"
+file = "screenshots/replica-physics.png"
+device = "desktop"
+side = "replica"
+
+[[screenshots]]
+route = "/flashcards/flags-of-europe"
+file = "screenshots/replica-flashcards.png"
+device = "desktop"
+side = "replica"
+
+[[screenshots]]
+route = "/"
+file = "screenshots/replica-home-mobile.png"
+device = "mobile"
+side = "replica"
