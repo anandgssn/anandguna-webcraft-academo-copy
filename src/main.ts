@@ -89,11 +89,14 @@ function bindDemoSearch() {
 }
 
 function filterDemos(query: string) {
+  const normalizedQuery = query.trim().toLowerCase();
+  if (!normalizedQuery) {
+    return demos;
+  }
   return demos.filter((demo) => {
-    const searchable = `${demo.title} ${demo.category} ${demo.additionalCategories?.join(" ") ?? ""} ${demo.tags.join(" ")}`.toLowerCase();
-    if (!query) return true;
-    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return new RegExp(`(^|[^a-z0-9])${escapedQuery}([^a-z0-9]|$)`, "i").test(searchable);
+    const searchable =
+      `${demo.title} ${demo.category} ${demo.additionalCategories?.join(" ") ?? ""} ${demo.tags.join(" ")} ${demo.description}`.toLowerCase();
+    return searchable.includes(normalizedQuery);
   });
 }
 

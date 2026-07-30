@@ -40,6 +40,12 @@ images = [
   "public/assets/logos/jce.png",
   "public/assets/logos/oer.png",
   "public/assets/logos/science-in-school.png",
+  "public/assets/leaflet/images/marker-icon.png",
+  "public/assets/leaflet/images/marker-icon-2x.png",
+  "public/assets/leaflet/images/marker-shadow.png",
+  "public/assets/leaflet/images/layers.png",
+  "public/assets/leaflet/images/layers-2x.png",
+  "public/assets/leaflet/images/",
 ]
 videos = []
 models_3d = []

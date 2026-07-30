@@ -1,4 +1,5 @@
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const CAPITALS: Array<[string,string,number,number]> = [
   ["Abu Dhabi","United Arab Emirates",24.467,54.367],["Abuja","Nigeria",9.067,7.483],["Accra","Ghana",5.55,-.2],["Addis Ababa","Ethiopia",9.03,38.74],["Algiers","Algeria",36.767,3.217],["Amman","Jordan",31.95,35.933],["Amsterdam","Netherlands",52.367,4.9],["Ankara","Turkey",39.52,32.52],["Antananarivo","Madagascar",-18.933,47.517],["Athens","Greece",37.97,23.72],

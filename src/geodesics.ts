@@ -1,9 +1,20 @@
 import L, { type LatLng, type LatLngExpression } from "leaflet";
+import "leaflet/dist/leaflet.css";
+// Fix Leaflet default icon URLs in Vite bundler — without this, marker-icon.png 404s
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import {
   calculateBearing,
   calculateGreatCircle,
   formatCoordinate
 } from "./geodesicMath";
+
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon2x,
+  shadowUrl: markerShadow
+});
 
 const START: LatLngExpression = [39.64, -115.49];
 const END: LatLngExpression = [-22.69, 52.98];

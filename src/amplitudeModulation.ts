@@ -19,6 +19,7 @@ export function mountAmplitudeModulation(root: HTMLElement) {
     </div>`;
 
   const canvas = root.querySelector<HTMLCanvasElement>("canvas")!;
+  const plot = canvas.parentElement!;
   let audio: AudioState | undefined;
   let animationStart = 0;
   let overlayMix = 0;
@@ -76,8 +77,10 @@ export function mountAmplitudeModulation(root: HTMLElement) {
   });
 
   const observer = new ResizeObserver(() => redraw());
-  observer.observe(canvas.parentElement!);
+  observer.observe(plot);
   const cleanup = window.setInterval(() => { if (!root.isConnected) { observer.disconnect(); clearInterval(cleanup); void stopAudio(audio); } }, 500);
+  // Double RAF ensures layout flushed before first draw (prevents 0-width white blank bug seen in screenshot)
+  requestAnimationFrame(() => requestAnimationFrame(() => redraw()));
   redraw();
 }
 
@@ -105,8 +108,14 @@ function setRangeFill(range: HTMLInputElement, color: string) {
 }
 
 function draw(canvas: HTMLCanvasElement, values: Values, overlayMix: number) {
-  const box = canvas.parentElement!.getBoundingClientRect();
-  const width = box.width; const height = width * 0.67; const ratio = devicePixelRatio || 1;
+  const parent = canvas.parentElement!;
+  const rect = parent.getBoundingClientRect();
+  // Fallback to clientWidth / root method when getBoundingClientRect returns 0 before layout flush (same pattern as geodesics)
+  const width = rect.width >= 16 ? rect.width : (parent.clientWidth || 820);
+  if (width < 16) {
+    return;
+  }
+  const height = width * 0.67; const ratio = devicePixelRatio || 1;
   canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio); canvas.style.width = `${width}px`; canvas.style.height = `${height}px`;
   const c = canvas.getContext("2d")!; c.scale(ratio, ratio); c.fillStyle = "#fff"; c.fillRect(0, 0, width, height);
   const margin = { top: 20, right: 20, bottom: 60, left: 20 }; const pw = width - 40; const ph = height - 80;

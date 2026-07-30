@@ -117,22 +117,35 @@ export function mountLogicGateSimulator(root: HTMLElement) {
     }
   }
 
+  function dependsOn(sourceId: string, targetId: string, seen = new Set<string>()): boolean {
+    if (sourceId === targetId) {
+      return true;
+    }
+    if (seen.has(sourceId)) {
+      return false;
+    }
+    seen.add(sourceId);
+    const node = state.nodes.find((item) => item.id === sourceId);
+    if (!node || isInputNode(node)) {
+      return false;
+    }
+    const dependencies: string[] = [];
+    if (isOutputNode(node)) {
+      if (node.input) {
+        dependencies.push(node.input);
+      }
+    } else if (isGateNode(node)) {
+      if (node.inputA) dependencies.push(node.inputA);
+      if (node.inputB) dependencies.push(node.inputB);
+      if (node.inputC) dependencies.push(node.inputC);
+    }
+    return dependencies.some((dependencyId) => dependsOn(dependencyId, targetId, seen));
+  }
+
   function getAvailableSources(node: SignalConsumerNode) {
     const inputSources = getInputNodes();
-
-    if (isOutputNode(node)) {
-      return [...inputSources, ...getGateNodes()];
-    }
-
-    const nodeIndex = state.nodes.findIndex((item) => item.id === node.id);
-
-    if (nodeIndex <= 0) {
-      return inputSources;
-    }
-
-    const previousGateSources = state.nodes.slice(0, nodeIndex).filter(isGateNode);
-
-    return [...inputSources, ...previousGateSources];
+    const gateSources = getGateNodes().filter((gate) => gate.id !== node.id && !dependsOn(gate.id, node.id));
+    return [...inputSources, ...gateSources];
   }
 
   function normalizeNodeSources() {

@@ -32,8 +32,9 @@ body {
   margin: 0;
 }
 
+/* MathJax content stays visible while the 1.8MB tex-svg chunk loads — hiding via visibility:hidden left a huge white blank area below the description (seen in screenshot) and also caused amplitude canvas to appear blank when its inline labels were hidden. Raw \(...\) is acceptable briefly; display \[...\] is large but better than white gap. If we need to hide, use layout-preserving min-height instead. */
 [data-mathjax-loading="true"] {
-  visibility: hidden;
+  visibility: visible;
 }
 
 button,

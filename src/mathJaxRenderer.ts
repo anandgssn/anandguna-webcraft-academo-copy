@@ -1,86 +1,79 @@
-type MathJaxConfig = {
-  startup?: {
-    promise?: Promise<void>;
-    typeset?: boolean;
-  };
-  typesetPromise?: (elements?: Element[]) => Promise<void>;
-  tex?: unknown;
-  svg?: unknown;
-};
+import "katex/dist/katex.css";
+import katex from "katex";
 
-declare global {
-  interface Window {
-    MathJax?: MathJaxConfig;
-  }
+// Escape helper for HTML
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-let mathJaxReady: Promise<MathJaxConfig> | undefined;
-
-async function loadMathJax() {
-  if (!mathJaxReady) {
-    window.MathJax = {
-      ...(window.MathJax ?? {}),
-      tex: {
-        displayMath: [["\\[", "\\]"]],
-        inlineMath: [["\\(", "\\)"]],
-        processEscapes: true
-      },
-      svg: {
-        fontCache: "local"
-      },
-      startup: {
-        ...(window.MathJax?.startup ?? {}),
-        typeset: false
-      }
-    };
-
-    mathJaxReady = import("mathjax/tex-svg.js").then(async () => {
-      await window.MathJax?.startup?.promise;
-      if (!window.MathJax?.typesetPromise) {
-        throw new Error("MathJax did not expose typesetPromise.");
-      }
-      return window.MathJax;
+function renderLatexToHtml(latex: string, displayMode: boolean) {
+  try {
+    return katex.renderToString(latex, {
+      displayMode,
+      throwOnError: false,
     });
+  } catch {
+    return escapeHtml(latex);
   }
-
-  return mathJaxReady;
 }
 
+// Renderer contract preserved (same export name used throughout the app)
 export async function renderMathJax(root: ParentNode = document) {
-  const formulaBlocks = Array.from(root.querySelectorAll<HTMLElement>("[data-mathjax]"))
-    .filter((block) => block.isConnected && block.dataset.mathjaxRendered !== "true");
+  const freshBlocks = Array.from(root.querySelectorAll<HTMLElement>("[data-mathjax]")).filter(
+    (block) => block.isConnected && block.dataset.mathjaxRendered !== "true"
+  );
 
-  if (formulaBlocks.length === 0) {
+  if (freshBlocks.length === 0) {
     return;
   }
 
-  formulaBlocks.forEach((block) => {
+  freshBlocks.forEach((block) => {
     block.dataset.mathjaxLoading = "true";
   });
 
-  let mathJax: MathJaxConfig;
-  try {
-    mathJax = await loadMathJax();
-  } catch (error) {
-    formulaBlocks.forEach((block) => delete block.dataset.mathjaxLoading);
-    throw error;
-  }
-  const connectedBlocks = formulaBlocks.filter((block) => block.isConnected);
+  // Double RAF ensures SPA layout has flushed before we inject SVG/HTML (fixes zero-width canvas interactions)
+  await new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
 
-  if (connectedBlocks.length === 0) {
+  const stillConnected = freshBlocks.filter((block) => block.isConnected);
+  if (stillConnected.length === 0) {
+    freshBlocks.forEach((block) => delete block.dataset.mathjaxLoading);
     return;
   }
 
-  try {
-    const typesetting = mathJax.typesetPromise?.(connectedBlocks) ?? Promise.resolve();
-    await Promise.race([
-      typesetting,
-      new Promise<void>((resolve) => window.setTimeout(resolve, 1000))
-    ]);
-  } finally {
-    connectedBlocks.forEach((block) => {
-      block.dataset.mathjaxRendered = "true";
-      delete block.dataset.mathjaxLoading;
+  const renderOneBlock = (block: HTMLElement) => {
+    if (!block.isConnected) {
+      return;
+    }
+    // Preserve the original TeX on the element so subsequent navigations don't re-parse already-rendered HTML
+    const rawHtml = block.getAttribute("data-mathjax-original") ?? block.innerHTML;
+    block.setAttribute("data-mathjax-original", rawHtml);
+
+    let html = rawHtml;
+    // Replace \[...\] display math first
+    html = html.replace(/\\\[([\s\S]*?)\\\]/g, (_match, texBlock) => {
+      const tex = String(texBlock).trim();
+      if (!tex) return "";
+      return `<span class="katex-display-wrap">${renderLatexToHtml(tex, true)}</span>`;
     });
-  }
+    // Then remaining \(...\) inline math
+    html = html.replace(/\\\(([\s\S]*?)\\\)/g, (_match, texBlock) => {
+      const tex = String(texBlock).trim();
+      if (!tex) return "";
+      return `<span class="katex-inline-wrap">${renderLatexToHtml(tex, false)}</span>`;
+    });
+
+    // If the replacement still contains raw KaTeX error containers, keep original LaTeX as fallback text
+    block.innerHTML = html;
+    block.dataset.mathjaxRendered = "true";
+  };
+
+  stillConnected.forEach((block) => renderOneBlock(block));
+
+  // Cleanup loading flag for all — even blocks that detached during double RAF
+  freshBlocks.forEach((block) => {
+    delete block.dataset.mathjaxLoading;
+  });
 }
