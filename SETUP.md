@@ -88,4 +88,5 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 
 ## Narration / Walkthrough Videos
 
-- Narrated Academo walkthrough: https://pxl.cl/bN1x8
+- Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD
+- Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8
