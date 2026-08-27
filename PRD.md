@@ -21,7 +21,15 @@ h1 "What would you like to explore?" followed by a horizontal rule, then a left-
 h1 "About Academo". Lead paragraph describing Academo as a free open-source hub of interactive educational demonstrations. Two body paragraphs on HTML and JavaScript implementation and community contributions.
 
 ### `/contact`
-h1 "Get in touch". Introductory paragraph: "You can find Academo on Twitter at @AcademoOrg, and on Facebook at academo.org. Alternatively, if you'd like to send us a message, you can use the form below." The form opens with an h2 "Contact Us" in regular-weight Lucida type, underlined by a 1px dotted grey separator. Below: Name field and Email field each at 50% width, stacked vertically on narrow screens, followed by full-width Your message textarea. Labels use bold compact Lucida Grande at 12.35px with 3px bottom padding and a red asterisk for required fields. Input fields have 1px `#a9a9a9` borders, 8px padding, white background, 13px Lucida Grande Tahoma Arial text, and 44px minimum height; the message textarea is 136px tall minimum and vertically resizable. The Submit button uses native operating-system styling — 22px visible height, 2px outset `#767676` border, `#efefef` background, black Arial 15.6px text, 0 7px padding, no border radius — with an invisible 11px top and bottom extension bringing the accessible hit area to 44px. Submitting opens the user's mail client addressed to `hello@academo.org`.
+h1 "Get in touch". Introductory paragraph: "You can find Academo on Twitter at @AcademoOrg, and on Facebook at academo.org. Alternatively, if you'd like to send us a message, you can use the form below."
+- Form header: h2 "Contact Us" in regular-weight Lucida type, underlined by a 1px dotted grey separator
+- Fields:
+  - Name field and Email field each at 50% width, stacked vertically on narrow screens
+  - Full-width Your message textarea
+- Labels: bold compact Lucida Grande at 12.35px with 3px bottom padding and a red asterisk for required fields
+- Inputs: 1px `#a9a9a9` borders, 8px padding, white background, 13px Lucida Grande Tahoma Arial text, 44px minimum height; message textarea 136px tall minimum and vertically resizable
+- Submit button: native operating-system styling — 22px visible height, 2px outset `#767676` border, `#efefef` background, black Arial 15.6px text, 0 7px padding, no border radius — with invisible 11px top and bottom extension bringing accessible hit area to 44px
+- On submit: opens user's mail client addressed to `hello@academo.org`
 
 ### `/submit-an-idea`
 h1 "Submit an idea". Paragraph asking whether the visitor is a teacher needing an interactive demo, a student needing help understanding a topic, or someone with a new demo or feature idea. Second paragraph with mailto link to `hello@academo.org` with subject "Academo demo idea", asking the sender to include topic, explanation goal, and suggested interaction.
@@ -98,7 +106,12 @@ h1 "Sorry, we can't find what you're looking for". Paragraph with link to `/demo
 ## 3. Visual system
 
 ### Branding
-The Academo header mark is a three-color image asset: a transparent PNG combining the teal circular frame, white inner dot, and navy page background showing through the transparent areas. It renders at 40px wide by 36px tall on desktop, with 10px right margin separating it from the wordmark text, vertically middle-aligned to the text baseline. On viewports 760px and below the mark scales to 30px by 28px and reverts to static inline positioning. The wordmark "Academo" is set in Open Sans 32px regular weight, lowercase, white at 95% opacity, positioned 10px below the top edge of the 77px header bar so the combined mark-plus-text sits optically centered. The browser favicon and Apple touch icon use a separate 128×128 PNG placing the same mark centered on a solid navy `#020535` square background.
+The Academo header mark is a three-color image asset:
+- Composition: transparent PNG combining the teal circular frame, white inner dot, and navy page background showing through the transparent areas
+- Desktop: 40px wide by 36px tall, 10px right margin separating it from the wordmark text, vertically middle-aligned to the text baseline
+- Mobile (≤760px): scales to 30px by 28px and reverts to static inline positioning
+- Wordmark "Academo": Open Sans 32px regular weight, lowercase, white at 95% opacity, positioned 10px below the top edge of the 77px header bar so the combined mark-plus-text sits optically centered
+- Browser favicon and Apple touch icon: separate 128×128 PNG placing the same mark centered on a solid navy `#020535` square background
 
 ### Colors
 | Name | Hex | Use |
@@ -277,8 +290,6 @@ The application surface includes the following outbound links, each opening in a
 
 All other navigation stays within local routes.
 
----
-
-## 8. Intentional scope exclusions
+### Scope exclusions
 
 No user accounts, registration, or authentication. No backend APIs, databases, or server-side rendering. No analytics, tracking, or ad scripts. No social embeds, share buttons, or comments. No donation links beyond the existing sponsor spacer placeholder. No video, 3D model files, or prerecorded audio assets. No email sending backend — contact and submit idea use mailto handoff only. No demo functionality beyond the sixteen specified interactive demos.
