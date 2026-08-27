@@ -66,7 +66,7 @@ h1 "19 TET Keyboard". Short blurb. SVG keyboard with 20 playable keys in white, 
 h1 "Virtual Oscilloscope". Short blurb. Split layout: oscilloscope screen left, controls right. Controls in order: Input select (Live / Sine / Square), "Freeze Live Input" checkbox, frequency number and slider with Hz unit, gain number and slider, seconds/div select, volts/div select, horizontal offset slider, vertical offset slider, color scheme select, status area. Below: explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
 
 ### `/demos/amplitude-modulation`
-h1 "Amplitude Modulation". Short blurb. Split layout with canvas waveform display and controls for carrier frequency, modulator frequency, and modulation index sliders. A "Hear it" button toggles audio output. Below: explanatory copy on AM principles with the formula y(t) = A_c [1 + m·cos(2πf_m t)] · cos(2πf_c t) rendered via MathJax.
+h1 "Amplitude Modulation". Short blurb. Split layout with canvas waveform display and controls for carrier frequency, modulator frequency, and modulation index sliders. A "Hear it" button toggles audio output. Below: explanatory copy on AM principles with the formula y(t) = A_c [1 + m·cos(2πf_m t)] · cos(2πf_c t) rendered as formatted mathematical notation.
 
 ### `/demos/rot-13-cipher`
 h1 "ROT-13 Encrypter/decrypter". Short blurb. Two text areas side by side: input on the left, output on the right updating live as the user types. Below: explanatory copy on ROT-13 as a Caesar cipher with shift 13, its self-inverse property, and historical context.
@@ -78,7 +78,7 @@ h1 "Hypocycloid animation". Short blurb. Canvas showing two circles with animate
 h1 "Estimating Pi using the Monte Carlo Method". Short blurb. Canvas showing unit square with inscribed circle and scattered random points, plus Start and Stop buttons and live readouts for points inside, total points, and current pi estimate. Below: explanatory copy on Monte Carlo estimation.
 
 ### `/demos/azimuth-calculator`
-h1 "Azimuth Calculator". Short blurb. Leaflet map with a pin marker for origin location and a star marker for target direction, connected by a red line. Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time. A "Set marker to you current location" button uses browser geolocation to center the map and reposition markers. Below: explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
+h1 "Azimuth Calculator". Short blurb. Interactive map with a pin marker for origin location and a star marker for target direction, connected by a red line. Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time. A "Set marker to you current location" button uses browser geolocation to center the map and reposition markers. Below: explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
 
 ### `/demos/colour-temperature-relationship`
 h1 "Colour-Temperature Relationship". Short blurb. Kelvin temperature slider with live color swatch display showing the resulting RGB color and hex value. Below: explanatory copy on black-body radiation and color temperature.
@@ -90,10 +90,10 @@ h1 "Electric field line simulator". Short blurb. Canvas showing electric field l
 h1 "Simple pendulum". Short blurb. Canvas showing two pendulums side by side with length sliders (50–500 pixels) for each, plus Start and Reset buttons. Below: explanatory copy on simple harmonic motion and the pendulum period formula.
 
 ### `/demos/geodesics`
-h1 "Geodesics on the Earth". Short blurb. Leaflet map showing two draggable markers connected by a red straight projected line and a purple great-circle geodesic curve, with readouts for origin coordinates, destination coordinates, and initial heading in degrees. Below: explanatory copy on geodesics and map projections.
+h1 "Geodesics on the Earth". Short blurb. Interactive map showing two draggable markers connected by a red straight projected line and a purple great-circle geodesic curve, with readouts for origin coordinates, destination coordinates, and initial heading in degrees. Below: explanatory copy on geodesics and map projections.
 
 ### `/demos/capital-cities-map`
-h1 "Capital Cities Map". Short blurb. Leaflet world map with circle markers at capital city locations; clicking a marker opens a popup showing the city name, country name, and a "Zoom In" button that centers the map on that capital at zoom level 8. Below: explanatory copy on capital cities.
+h1 "Capital Cities Map". Short blurb. Interactive world map with circle markers at capital city locations; clicking a marker opens a popup showing the city name, country name, and a "Zoom In" button that centers the map on that capital at zoom level 8. Below: explanatory copy on capital cities.
 
 ### `/flashcards/flags-of-europe` and `/flashcards/us-states`
 Uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards`, placed above the h1. h1 with flashcard set title and short blurb. Action bar with "View All Terms", "Shuffle", "Flip All Cards", "Reset". Stage with Previous button, single flashcard, Next button, slide counter with skip-to-start and skip-to-end. Click card to flip between name and image (flag SVG for Europe, US state map SVG for US States). "View All Terms" opens a modal table: Flags of Europe shows five columns — #, Country, Flag thumbnail 72×48, Visible checkbox, and Shown side toggle button; US States shows three columns — State, Map thumbnail, and Visible checkbox (no Shown side control). Below: for Flags of Europe, "Useful notes" section with seven paragraphs on easily confused flags; for US States, a credits paragraph.
@@ -145,7 +145,7 @@ Oscilloscope palettes — Default: bg `#5db1a2`, grid `#196156`, trace `#befde5`
 Vector colors — Blue `#4f81bd` (v1), Red `#d9534f` (v2), Purple `#8064a2` (resultant), Turquoise `#37d8e6` (difference), Green `#75c841` (cross), Orange `#f79646`, Magenta `#ff00ff`, Brown `#8f3938` (added entries cycle).
 
 ### Typography
-Font family "Open Sans", Arial, sans-serif loaded from Google Fonts at weights 400, 700, 800. Material Symbols Outlined loaded for navigation and flashcard icons. Contact form uses Lucida Grande / Lucida Sans Unicode / Tahoma stack for labels and header, and Lucida Grande / Tahoma / Arial for inputs. Contact submit button uses Arial.
+Font family "Open Sans", Arial, sans-serif at weights 400, 700, 800. Material Symbols Outlined for navigation and flashcard icons. Contact form uses Lucida Grande / Lucida Sans Unicode / Tahoma stack for labels and header, and Lucida Grande / Tahoma / Arial for inputs. Contact submit button uses Arial.
 
 | Element | Size | Weight | Color | Line height |
 |---------|------|--------|-------|-------------|
@@ -171,7 +171,7 @@ Font family "Open Sans", Arial, sans-serif loaded from Google Fonts at weights 4
 | Error/status | 13px | — | `#8a1f11` | — |
 
 ### Spacing and layout
-Body min-width 320px, margin 0. Wrapper max-width 1200px, `margin: 20px auto 0`, min-height 100vh, white background, shadow `0 0 3px #c8c8c8`. Every route begins with a sponsor spacer: 130px minimum height, 90% width centered, 20px bottom margin, 20px vertical padding, flex-centered content area (empty by design to preserve original page rhythm). Main content width 90% (92% ≤760px, 100% with 10px side padding ≤520px), `padding-bottom: 70px`.
+Body min-width 320px, margin 0. Wrapper max-width 1200px, `margin: 20px auto 0`, min-height 100vh, white background, shadow `0 0 3px #c8c8c8`. Every route begins with a sponsor spacer: 130px minimum height, 90% width centered, 20px bottom margin, 20px vertical padding, flex-centered content area (empty by design as a visual spacer in the homepage layout). Main content width 90% (92% ≤760px, 100% with 10px side padding ≤520px), `padding-bottom: 70px`.
 
 Global header upper bar is 77px tall total, achieved by 25px top and bottom padding around the 32px wordmark positioned 10px below the bar top edge (15px 20px padding and 26px wordmark ≤760px). Header lower bar has 10px vertical padding and 20px horizontal padding (12px horizontal ≤520px) with 1px teal top border. Header inner container max-width 1200px centered. Primary navigation floats right with 20px gap and 40px left margin; includes About, Search, Contact, and Submit an idea links. Secondary navigation is a flex row with 20px gap, max-width 1200px centered, wrapping to multiple rows on narrow viewports, showing All plus six category links (Engineering, Geography, Maths, Music, Physics, Flashcards with stacked-square icon).
 
@@ -273,7 +273,7 @@ US States — SVG files in `public/assets/us-states/` named by state slug (e.g. 
 
 Brand and publication logos — `public/assets/logos/academo-mark.png` (three-color transparent PNG used in header at 40×36px desktop, 30×28px ≤760px), `public/assets/logos/academo-favicon.png` (128×128 PNG with mark centered on navy `#020535` square, used for favicon and Apple touch icon), `public/assets/logos/html5-weekly.png`, `public/assets/logos/jce.png`, `public/assets/logos/oer.png`, `public/assets/logos/science-in-school.png`.
 
-Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined loaded from Google Fonts. Material Symbols used for Flashcards navigation icon (`auto_awesome_motion` stacked squares), Flags breadcrumb icon (`keyboard_double_arrow_left`), and flashcard action bar icons.
+Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined. Material Symbols used for Flashcards navigation icon (`auto_awesome_motion` stacked squares), Flags breadcrumb icon (`keyboard_double_arrow_left`), and flashcard action bar icons.
 
 ---
 
@@ -282,7 +282,7 @@ Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined loaded f
 The application surface includes the following outbound links, each opening in a new tab with `rel="noreferrer"` except where noted:
 
 - **CodePen** — on the Amplitude Modulation demo page, an "Open with CodePen" link to `https://codepen.io/pen/` with tooltip "CodePen is a free online tool for editing and writing code."
-- **OpenStreetMap attribution** — on the Azimuth Calculator, Geodesics on the Earth, and Capital Cities Map demos, the Leaflet tile layer attribution links to `https://www.openstreetmap.org/copyright` crediting OpenStreetMap contributors.
+- **OpenStreetMap attribution** — on the Azimuth Calculator, Geodesics on the Earth, and Capital Cities Map demos, the map tile layer attribution links to `https://www.openstreetmap.org/copyright` crediting OpenStreetMap contributors.
 - **GitHub flag credits** — in the Flags of Europe useful notes section, a credits link to `https://github.com/hampusborgos/country-flags` attributing the flag image source.
 - **Wikimedia state-map credits** — in the US States Map Flashcards credits section, a link to the Wikimedia Commons page for the public-domain blank US map SVG.
 - **Browser cookie help** — on the Cookie Policy page, links to official support documents for Chrome (`support.google.com`), Safari (`support.apple.com`), Firefox (`support.mozilla.org`), and Internet Explorer (`support.microsoft.com`).
@@ -290,6 +290,6 @@ The application surface includes the following outbound links, each opening in a
 
 All other navigation stays within local routes.
 
-### Scope exclusions
+### Scope note
 
-No user accounts, registration, or authentication. No backend APIs, databases, or server-side rendering. No analytics, tracking, or ad scripts. No social embeds, share buttons, or comments. No donation links beyond the existing sponsor spacer placeholder. No video, 3D model files, or prerecorded audio assets. No email sending backend — contact and submit idea use mailto handoff only. No demo functionality beyond the sixteen specified interactive demos.
+The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
