@@ -15,7 +15,10 @@ Centered h1 "Academo".
 - Section heading: "Some of our most popular demos." on one line and "Visit the demos page to browse all our demos." on the next, with "browse all our demos" linked to `/demos`
 - Popular demos grid: three demo cards in a centered row — Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator
   - Heading: 1.5em size, 700 weight, normal line height, 0.83em vertical margin, centered, with link portion in title color at 70% opacity shifting to orange on hover
-  - Card list: flex wrap centered, with negative 18px horizontal margin on container to offset card margins; each card list item is `calc(25% − 40px)` wide with 20px margin on all sides, producing 44px horizontal space between adjacent cards (20px right margin + 4px flex gap + 20px left margin) and 40px vertical space between rows (20px bottom + 20px top); images use content-box sizing so 1px border sits outside 260px content width
+  - Card list:
+    - Flex wrap centered, with negative 18px horizontal margin on container to offset card margins
+    - Each card list item is `calc(25% − 40px)` wide with 20px margin on all sides, producing 44px horizontal space between adjacent cards (20px right margin + 4px flex gap + 20px left margin) and 40px vertical space between rows (20px bottom + 20px top)
+    - Images use content-box sizing so 1px border sits outside 260px content width
 - Featured section: "Featured around the web" with four publication logos in a row
 
 ### `/demos` — All demos
@@ -438,7 +441,14 @@ The following verification matrix summarizes high-signal checks for the product.
 
 ## 5. Global Accessibility Requirements
 
-**Accessibility:** Semantic landmarks — header with labeled navigation, main, footer, sections with aria-labelledby, search form with role search, dialog with role dialog and aria-modal. One h1 per page, hierarchical h2/h3/h5. Active nav link marked aria-current page. Toggle buttons use aria-pressed. Live regions (aria-live polite) on search results, result count, demo list, and flashcard carousel. Form inputs paired with labels; required fields marked required and indicated visually with red asterisk. Images have descriptive alt text; decorative images aria-hidden or empty alt. SVG keyboard keys have role button, tabindex, and aria-label. Flashcard flip button and breadcrumb link have accessible names. Focus visible outline 3px solid orange with 3px offset on all interactive elements. Color is never the sole indicator.
+- Landmarks: header with labeled navigation, main, footer, sections with aria-labelledby, search form with role search, dialog with role dialog and aria-modal
+- Headings: one h1 per page, hierarchical h2/h3/h5
+- Navigation: active nav link marked aria-current page; toggle buttons use aria-pressed
+- Live regions: aria-live polite on search results, result count, demo list, and flashcard carousel
+- Forms: inputs paired with labels; required fields marked required and indicated visually with red asterisk
+- Images: descriptive alt text for meaningful imagery; decorative images aria-hidden or empty alt
+- Keyboard: SVG keys have role button, tabindex, and aria-label; flashcard flip button and breadcrumb link have accessible names
+- Focus: visible outline 3px solid orange with 3px offset on all interactive elements; color is never the sole indicator
 
 ---
 
