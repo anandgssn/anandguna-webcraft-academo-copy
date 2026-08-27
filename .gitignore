@@ -9,3 +9,4 @@ AGENTS.md
 .env*
 playwright-report/
 test-results/
+.webcraft-prd-runs/

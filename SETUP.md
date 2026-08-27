@@ -35,7 +35,7 @@ npm run preview
 
 ## Deployment
 
-The production site is deployed at `https://leg10n-webcraft-academo.vercel.app` under the AAI Web Craft Vercel team. A Vercel firewall restricts access to the approved Meta IP ranges.
+The production site is deployed at `https://anandguna-webcraft-academo-copy.vercel.app` under the AAI Web Craft Vercel team. The published `internal meta` Vercel firewall rule denies traffic outside `199.201.64.0/22` and `163.114.128.0/20`.
 The included `vercel.json` rewrites direct route requests such as `/demos/virtual-oscilloscope` back to the Vite app.
 
 ```bash
@@ -88,9 +88,4 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 
 ## Narration / Walkthrough Videos
 
-> **Note:** The two links below are **SUPERSEDED — recorded with microphone off (no audio track, 1747 s and 1240 s)** per T285801546 audit. They are kept for reference only; a re-recorded narrated desktop + mobile pair with microphone enabled is pending and will replace them. Reviewer: please rely on the future narrated links.
-
-- Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD — **SUPERSEDED — no audio track (1747 s, audio=n)** per T285801546 B7; pending mic-enabled re-record
-- Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8 — **SUPERSEDED — no audio track (1240 s, audio=n)** per T285801546 B7; pending mic-enabled re-record
-
-<!-- Pending B1-B6: re-record desktop + mobile passes with mic enabled, narrating cause-and-effect while navigating every sub-page/route, hover/click/swipe/form-submit incl. validation/success/error, scroll/parallax/lazy-load/page-load/transition animations, and responsive layout at each PRD breakpoint; verify with `ffprobe -show_streams -select_streams a` (single audio track) and `ffplay`, upload to Pixelcloud, and replace superseded links above with the new `pxl.cl` desktop + mobile pair per T285801546. -->
+- Temporary walkthrough placeholder pending the narrated recording: https://pxl.cl/pending

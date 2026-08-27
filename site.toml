@@ -1,13 +1,13 @@
 [site]
 name = "anandguna-webcraft-academo-copy"
-url = "https://leg10n-webcraft-academo.vercel.app"
+url = "https://anandguna-webcraft-academo-copy.vercel.app"
 original_url = "https://academo.org/"
 description = "Academo educational demo site with category pages and sixteen functional interactive demos including US States Map Flashcards and Capital Cities Map."
 category = "replication"
 
 [site.tech]
 stack = ["Vite", "TypeScript", "Three.js", "MathJax", "Canvas", "Web Audio"]
-hosting = "Vercel"
+hosting = "vercel"
 hosting_access_granted = true
 
 [site.assets]

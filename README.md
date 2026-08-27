@@ -2,7 +2,7 @@
 
 This is a copy of [codimango/leg10n-webcraft-academo](https://github.com/codimango/leg10n-webcraft-academo) — the original author has left the Web Craft track. This copy is maintained by **anandguna** for PRD and walkthrough fixes per task [T285801546](https://www.internalfb.com/tasks/?t=285801546).
 
-The original site is live at https://leg10n-webcraft-academo.vercel.app and the original repo is https://github.com/codimango/leg10n-webcraft-academo.
+The maintained copy is deployed at https://anandguna-webcraft-academo-copy.vercel.app under the AAI Web Craft Vercel team. Its internal source repository is https://github.com/codimango/anandguna-webcraft-academo-copy.
 
 ## Original Web Craft Template
 
