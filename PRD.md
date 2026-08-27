@@ -14,6 +14,8 @@ Centered h1 "Academo".
 - Subject tag row: linking to the six category pages
 - Section heading: "Some of our most popular demos." on one line and "Visit the demos page to browse all our demos." on the next, with "browse all our demos" linked to `/demos`
 - Popular demos grid: three demo cards in a centered row — Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator
+  - Heading: 1.5em size, 700 weight, normal line height, 0.83em vertical margin, centered, with link portion in title color at 70% opacity shifting to orange on hover
+  - Card list: flex wrap centered, with negative 18px horizontal margin on container to offset card margins; each card list item is `calc(25% − 40px)` wide with 20px margin on all sides, producing 44px horizontal space between adjacent cards (20px right margin + 4px flex gap + 20px left margin) and 40px vertical space between rows (20px bottom + 20px top); images use content-box sizing so 1px border sits outside 260px content width
 - Featured section: "Featured around the web" with four publication logos in a row
 
 ### `/demos` — All demos
@@ -322,10 +324,10 @@ Font family "Open Sans", Arial, sans-serif at weights 400, 700, 800. Material Sy
 
 Tag pills have 8px 12px padding, 44px minimum height, 10px gap between pills, centered overall (left-aligned ≤520px except intro tags which stay centered). Buttons in toolbars have 44px minimum height (contact and logic toolbar) or 38px (vector actions), with 10px 16px or 9px 12px padding respectively.
 
-### Card dimensions and homepage popular section
-Demo thumbnail image uses aspect-ratio 260/170 with 1px `#c8c8c8` border; opacity transitions to 0.85 on hover over 0.25s. Title has 10px top margin, 14px 800 weight, color transitions to orange over 0.25s. Card grid gap 28px row / 24px column.
+### Card dimensions
+Demo thumbnail image uses aspect-ratio 260/170 with 1px `#c8c8c8` border; opacity transitions to 0.85 on hover over 0.25s. Title has 10px top margin, 14px 800 weight, color transitions to orange over 0.25s. Card grid gap 28px row / 24px column. Images inside cards use content-box sizing so the 1px border sits outside the 260px content width.
 
-On the homepage popular section, the heading uses 1.5em size, 700 weight, normal line height, 0.83em vertical margin, centered, with the link portion in title color at 70% opacity shifting to orange on hover. The card list below uses flex wrap centered, with negative 18px horizontal margin on the container to offset card margins. Each card list item is `calc(25% − 40px)` wide with 20px margin on all sides, producing 44px horizontal space between adjacent cards (20px right margin + 4px flex gap + 20px left margin) and 40px vertical space between rows (20px bottom + 20px top). Images inside popular cards use content-box sizing so the 1px border sits outside the 260px content width.
+For the Homepage popular section dimensions, see §2 `/` — Homepage (popular demos grid) where the per-surface card layout is documented with its surface.
 
 ### Breakpoints
 | Width | Behavior |
@@ -410,23 +412,21 @@ On the homepage popular section, the heading uses 1.5em size, 700 weight, normal
 
 ---
 
-## 5. Responsive, accessibility, animation, and error states
+## 5. Global Accessibility Requirements
 
-This section covers Global Design (responsive layout, breakpoints, animation) and Global Accessibility (semantic landmarks, keyboard access, focus visibility, live regions). Animation and error/empty states are included here as cross-cutting Global Design and accessibility concerns.
-
-**Responsive:** Minimum supported width 320px. Layouts stack from two-column to single-column at 950px for demos with sidebars. Card grid collapses 4→3→2→1 columns across breakpoints. Header navigation wraps to multiple rows. All interactive targets meet 44px minimum height where specified; contact submit button achieves this via invisible hit-area extension.
+This section defines accessibility and cross-cutting interaction expectations that apply across the product. Responsive layout, motion, and section-specific error/empty states are documented in Global Design System (§3) and with their Product Surfaces (§2 / §4); only the accessibility requirements that are global are centralized here.
 
 **Accessibility:** Semantic landmarks — header with labeled navigation, main, footer, sections with aria-labelledby, search form with role search, dialog with role dialog and aria-modal. One h1 per page, hierarchical h2/h3/h5. Active nav link marked aria-current page. Toggle buttons use aria-pressed. Live regions (aria-live polite) on search results, result count, demo list, and flashcard carousel. Form inputs paired with labels; required fields marked required and indicated visually with red asterisk. Images have descriptive alt text; decorative images aria-hidden or empty alt. SVG keyboard keys have role button, tabindex, and aria-label. Flashcard flip button and breadcrumb link have accessible names. Focus visible outline 3px solid orange with 3px offset on all interactive elements. Color is never the sole indicator.
 
-**Animation:** Links and buttons transition color, background, border, and opacity over 0.25s. Thumbnail image opacity 0.85 on hover over 0.25s; title color to orange over 0.25s. Publication logos transition grayscale filter and opacity over 0.5s on hover-out, instant on hover-in. Flashcard uses CSS 3D flip transform. Vector plotter camera uses damping for smooth orbit inertia. 19 TET audio uses 15ms attack and 30ms release ramps. Oscilloscope and other canvas demos redraw at animation frame rate. Range input fill updates instantly on input.
-
-**Error and empty states:** No search results shows full-width card with "No matching demos. Try a broader subject or clear the search field." On `/search`, empty query shows no cards and no heading at all. Vector plotter shows red error text naming the invalid field; readout hides when empty. Oscilloscope shows red status text for missing microphone permission or unsupported browser and reverts to sine wave. 19 TET shows upgrade message if Web Audio unavailable. Flags of Europe with no visible cards shows "No visible flashcards. Open All Flashcards to make cards visible again." US States Map Flashcards with no visible cards shows "No visible flashcards. Open All Terms to make cards visible again." Both show disabled nav buttons and 0/0 counter. Corrupted flashcard storage resets silently to initial state. Contact form uses native browser validation blocking submit on empty or invalid email. Unrecognized route shows 404 with link to demos.
+For responsive breakpoints, see Global Design System §3 Breakpoints. For motion and transition timing, see §3 and the relevant Product Surfaces. For per-surface error and empty states (search, vector plotter, oscilloscope, flashcards, contact form, 404), see §4 Verifiable interactions and the flashcard surfaces in §2 where each state is documented with its surface; the global error copy is not duplicated here to keep Global Content and Data free of surface-local copy.
 
 ---
 
 ## 6. Global Content and Data
 
-This section is the Global Content and Data inventory. It supports Product Surfaces in §2 and lists reusable content and assets.
+This section inventories reusable content and assets mapped to Product Surfaces in §2. The following subsections list the public asset inventory and outbound attribution links that are part of Global Content and Data.
+
+### Asset inventory
 
 Demo thumbnails — `public/assets/demos/19-tet-keyboard.png`, `public/assets/demos/3d-vector-plotter.png`, `public/assets/demos/amplitude-modulation.png`, `public/assets/demos/azimuth-calculator.png`, `public/assets/demos/capital-cities-map.png`, `public/assets/demos/colour-temperature-relationship.png`, `public/assets/demos/electric-field-line-simulator.png`, `public/assets/demos/estimating-pi-monte-carlo.png`, `public/assets/demos/flags-of-europe.png`, `public/assets/demos/geodesics.png`, `public/assets/demos/hypocycloid.png`, `public/assets/demos/logic-gate-simulator.png`, `public/assets/demos/rot-13-cipher.png`, `public/assets/demos/simple-pendulum.png`, `public/assets/demos/us-states-map.png`, `public/assets/demos/virtual-oscilloscope.png`.
 
@@ -446,7 +446,7 @@ Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined. Materia
 
 ### External links and attributions
 
-The application surface includes the following outbound links, each opening in a new tab with `rel="noreferrer"` except where noted:
+The following outbound links are part of Global Content and Data and appear on the surfaces noted; all open in a new tab with `rel="noreferrer"` except where noted:
 
 - **CodePen** — on the Amplitude Modulation demo page, an "Open with CodePen" link to `https://codepen.io/pen/` with tooltip "CodePen is a free online tool for editing and writing code."
 - **OpenStreetMap attribution** — on the Azimuth Calculator, Geodesics on the Earth, and Capital Cities Map demos, the map tile layer attribution links to `https://www.openstreetmap.org/copyright` crediting OpenStreetMap contributors.
@@ -457,6 +457,6 @@ The application surface includes the following outbound links, each opening in a
 
 All other navigation stays within local routes.
 
-### Scope note — Scope exclusions
+### Scope note
 
-This subsection defines scope exclusions. The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
+The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
