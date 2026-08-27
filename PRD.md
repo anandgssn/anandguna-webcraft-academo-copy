@@ -2,7 +2,7 @@
 
 ## 1. Product purpose and audience
 
-Academo is a free directory of interactive educational demonstrations for students, teachers, and self-guided learners. No registration, no fees, no backend services. Six subject areas — Engineering, Geography, Maths, Music, Physics, Flashcards — each with multiple interactive demos organized into subcategories. The site is a static single-page application.
+Academo is a free directory of interactive educational demonstrations for students, teachers, and self-guided learners. No registration, no fees, no backend services. Six subject areas — Engineering, Geography, Maths, Music, Physics, Flashcards — each with multiple interactive demos organized into subcategories. The site is a static single-page application delivering the sixteen demonstrations documented in §2; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
 
 ---
 
@@ -163,7 +163,15 @@ Each demo page shows:
 - h1: "Virtual Oscilloscope"
 - Blurb: Short blurb.
 - Layout: Split layout with oscilloscope screen on the left and controls on the right.
-- Controls: Input select (Live / Sine / Square), "Freeze Live Input" checkbox, frequency number and slider with Hz unit, gain number and slider, seconds/div select, volts/div select, horizontal offset slider, vertical offset slider, color scheme select, status area; below explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
+- Controls:
+  - Input select (Live / Sine / Square)
+  - "Freeze Live Input" checkbox
+  - Frequency number and slider with Hz unit
+  - Gain number and slider
+  - Seconds/div select and volts/div select
+  - Horizontal offset slider and vertical offset slider
+  - Color scheme select and status area
+- Below: explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
 
 ### `/demos/amplitude-modulation`
 - h1: "Amplitude Modulation"
@@ -193,7 +201,10 @@ Each demo page shows:
 - h1: "Azimuth Calculator"
 - Blurb: Short blurb.
 - Layout: Interactive map with a pin marker for origin location and a star marker for target direction, connected by a red line.
-- Controls: Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time; "Set marker to you current location" button uses browser geolocation to center the map and reposition markers; below explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
+- Controls:
+  - Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time
+  - "Set marker to you current location" button uses browser geolocation to center the map and reposition markers
+- Below: explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
 
 ### `/demos/colour-temperature-relationship`
 h1 "Colour-Temperature Relationship". Short blurb. Kelvin temperature slider with live color swatch display showing the resulting RGB color and hex value. Below: explanatory copy on black-body radiation and color temperature.
@@ -414,11 +425,7 @@ For the Homepage popular section dimensions, see §2 `/` — Homepage (popular d
 
 ## 5. Global Accessibility Requirements
 
-This section defines accessibility and cross-cutting interaction expectations that apply across the product. Responsive layout, motion, and section-specific error/empty states are documented in Global Design System (§3) and with their Product Surfaces (§2 / §4); only the accessibility requirements that are global are centralized here.
-
 **Accessibility:** Semantic landmarks — header with labeled navigation, main, footer, sections with aria-labelledby, search form with role search, dialog with role dialog and aria-modal. One h1 per page, hierarchical h2/h3/h5. Active nav link marked aria-current page. Toggle buttons use aria-pressed. Live regions (aria-live polite) on search results, result count, demo list, and flashcard carousel. Form inputs paired with labels; required fields marked required and indicated visually with red asterisk. Images have descriptive alt text; decorative images aria-hidden or empty alt. SVG keyboard keys have role button, tabindex, and aria-label. Flashcard flip button and breadcrumb link have accessible names. Focus visible outline 3px solid orange with 3px offset on all interactive elements. Color is never the sole indicator.
-
-For responsive breakpoints, see Global Design System §3 Breakpoints. For motion and transition timing, see §3 and the relevant Product Surfaces. For per-surface error and empty states (search, vector plotter, oscilloscope, flashcards, contact form, 404), see §4 Verifiable interactions and the flashcard surfaces in §2 where each state is documented with its surface; the global error copy is not duplicated here to keep Global Content and Data free of surface-local copy.
 
 ---
 
@@ -428,19 +435,19 @@ This section inventories reusable content and assets mapped to Product Surfaces 
 
 ### Asset inventory
 
-Demo thumbnails — `public/assets/demos/19-tet-keyboard.png`, `public/assets/demos/3d-vector-plotter.png`, `public/assets/demos/amplitude-modulation.png`, `public/assets/demos/azimuth-calculator.png`, `public/assets/demos/capital-cities-map.png`, `public/assets/demos/colour-temperature-relationship.png`, `public/assets/demos/electric-field-line-simulator.png`, `public/assets/demos/estimating-pi-monte-carlo.png`, `public/assets/demos/flags-of-europe.png`, `public/assets/demos/geodesics.png`, `public/assets/demos/hypocycloid.png`, `public/assets/demos/logic-gate-simulator.png`, `public/assets/demos/rot-13-cipher.png`, `public/assets/demos/simple-pendulum.png`, `public/assets/demos/us-states-map.png`, `public/assets/demos/virtual-oscilloscope.png`.
-
-Logic gate — `public/assets/demos/logic-gate-graph-paper.png`, `public/assets/logic-symbols/and.svg`, `public/assets/logic-symbols/and3.svg`, `public/assets/logic-symbols/nand.svg`, `public/assets/logic-symbols/nor.svg`, `public/assets/logic-symbols/not.svg`, `public/assets/logic-symbols/or.svg`, `public/assets/logic-symbols/xor.svg`.
+| Asset group | Public paths |
+|-------------|--------------|
+| Demo thumbnails | `public/assets/demos/19-tet-keyboard.png`, `public/assets/demos/3d-vector-plotter.png`, `public/assets/demos/amplitude-modulation.png`, `public/assets/demos/azimuth-calculator.png`, `public/assets/demos/capital-cities-map.png`, `public/assets/demos/colour-temperature-relationship.png`, `public/assets/demos/electric-field-line-simulator.png`, `public/assets/demos/estimating-pi-monte-carlo.png`, `public/assets/demos/flags-of-europe.png`, `public/assets/demos/geodesics.png`, `public/assets/demos/hypocycloid.png`, `public/assets/demos/logic-gate-simulator.png`, `public/assets/demos/rot-13-cipher.png`, `public/assets/demos/simple-pendulum.png`, `public/assets/demos/us-states-map.png`, `public/assets/demos/virtual-oscilloscope.png` |
+| Logic gate | `public/assets/demos/logic-gate-graph-paper.png`, `public/assets/logic-symbols/and.svg`, `public/assets/logic-symbols/and3.svg`, `public/assets/logic-symbols/nand.svg`, `public/assets/logic-symbols/nor.svg`, `public/assets/logic-symbols/not.svg`, `public/assets/logic-symbols/or.svg`, `public/assets/logic-symbols/xor.svg` |
 
 19 TET — `public/assets/19-tet/keyboard.png`.
 
-Flags of Europe — 51 SVG files in `public/assets/flags/europe/` named by ISO code: `ad.svg`, `al.svg`, `am.svg`, `at.svg`, `az.svg`, `ba.svg`, `be.svg`, `bg.svg`, `by.svg`, `ch.svg`, `cy.svg`, `cz.svg`, `de.svg`, `dk.svg`, `ee.svg`, `es.svg`, `fi.svg`, `fr.svg`, `gb.svg`, `ge.svg`, `gr.svg`, `hr.svg`, `hu.svg`, `ie.svg`, `is.svg`, `it.svg`, `kz.svg`, `li.svg`, `lt.svg`, `lu.svg`, `lv.svg`, `mc.svg`, `md.svg`, `me.svg`, `mk.svg`, `mt.svg`, `nl.svg`, `no.svg`, `pl.svg`, `pt.svg`, `ro.svg`, `rs.svg`, `ru.svg`, `se.svg`, `si.svg`, `sk.svg`, `sm.svg`, `tr.svg`, `ua.svg`, `va.svg`, `xk.svg`.
-
-US States — SVG files in `public/assets/us-states/` named by state slug (e.g. `alabama.svg`, `alaska.svg`, `columbia.svg` for Washington D.C.).
-
-Brand and publication logos — `public/assets/logos/academo-mark.png` (three-color transparent PNG used in header at 40×36px desktop, 30×28px ≤760px), `public/assets/logos/academo-favicon.png` (128×128 PNG with mark centered on navy `#020535` square, used for favicon and Apple touch icon), `public/assets/logos/html5-weekly.png`, `public/assets/logos/jce.png`, `public/assets/logos/oer.png`, `public/assets/logos/science-in-school.png`.
-
-Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined. Material Symbols used for Flashcards navigation icon (`auto_awesome_motion` stacked squares), Flags breadcrumb icon (`keyboard_double_arrow_left`), and flashcard action bar icons.
+| Asset subgroup | Paths / notes |
+|---------------|---------------|
+| Flags of Europe | 51 SVG files in `public/assets/flags/europe/` named by ISO code: `ad.svg`, `al.svg`, `am.svg`, `at.svg`, `az.svg`, `ba.svg`, `be.svg`, `bg.svg`, `by.svg`, `ch.svg`, `cy.svg`, `cz.svg`, `de.svg`, `dk.svg`, `ee.svg`, `es.svg`, `fi.svg`, `fr.svg`, `gb.svg`, `ge.svg`, `gr.svg`, `hr.svg`, `hu.svg`, `ie.svg`, `is.svg`, `it.svg`, `kz.svg`, `li.svg`, `lt.svg`, `lu.svg`, `lv.svg`, `mc.svg`, `md.svg`, `me.svg`, `mk.svg`, `mt.svg`, `nl.svg`, `no.svg`, `pl.svg`, `pt.svg`, `ro.svg`, `rs.svg`, `ru.svg`, `se.svg`, `si.svg`, `sk.svg`, `sm.svg`, `tr.svg`, `ua.svg`, `va.svg`, `xk.svg` |
+| US States | SVG files in `public/assets/us-states/` named by state slug (e.g. `alabama.svg`, `alaska.svg`, `columbia.svg` for Washington D.C.) |
+| Brand and publication logos | `public/assets/logos/academo-mark.png` (three-color transparent PNG used in header at 40×36px desktop, 30×28px ≤760px), `public/assets/logos/academo-favicon.png` (128×128 PNG with mark centered on navy `#020535` square, used for favicon and Apple touch icon), `public/assets/logos/html5-weekly.png`, `public/assets/logos/jce.png`, `public/assets/logos/oer.png`, `public/assets/logos/science-in-school.png` |
+| Fonts and icons | Open Sans 400/700/800 and Material Symbols Outlined. Material Symbols used for Flashcards navigation icon (`auto_awesome_motion` stacked squares), Flags breadcrumb icon (`keyboard_double_arrow_left`), and flashcard action bar icons. |
 
 ---
 
@@ -456,7 +463,3 @@ The following outbound links are part of Global Content and Data and appear on t
 - **mailto links** — on Contact, Submit an idea, Privacy Policy, and Cookie Policy pages, mailto links to `hello@academo.org` open the user's email client; these are not external web links.
 
 All other navigation stays within local routes.
-
-### Scope note
-
-The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
