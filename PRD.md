@@ -9,16 +9,29 @@ Academo is a free directory of interactive educational demonstrations for studen
 ## 2. Route-level visible requirements
 
 ### `/` — Homepage
-Centered h1 "Academo". Intro paragraph stating the site is a free collection of interactive educational demos with no registration required, with inline link to `/demos`. Subject tag row linking to the six category pages. Section heading "Some of our most popular demos." on one line and "Visit the demos page to browse all our demos." on the next, with "browse all our demos" linked to `/demos`. Below the heading, three demo cards in a centered row: Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator. Section "Featured around the web" with four publication logos in a row.
+Centered h1 "Academo".
+- Intro paragraph: stating the site is a free collection of interactive educational demos with no registration required, with inline link to `/demos`
+- Subject tag row: linking to the six category pages
+- Section heading: "Some of our most popular demos." on one line and "Visit the demos page to browse all our demos." on the next, with "browse all our demos" linked to `/demos`
+- Popular demos grid: three demo cards in a centered row — Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator
+- Featured section: "Featured around the web" with four publication logos in a row
 
 ### `/demos` — All demos
-h1 "All demos". Paragraph: "Below is a list of all the demos currently available on academo.org, arranged in alphabetical order. If you would like to browse demos by a specific subject, please click one of the category links to be taken to the page for your chosen category. We are always adding new demos, so please check back often to see the latest updates." Subject tag row showing five categories (Engineering, Geography, Maths, Music, Physics — Flashcards excluded from this row). Grid of demo cards sorted alphabetically by title, split into two sections separated by a horizontal rule and an h3 "Flashcards" heading: non-flashcard demos above, flashcard demos below.
+h1 "All demos".
+- Intro paragraph: "Below is a list of all the demos currently available on academo.org, arranged in alphabetical order. If you would like to browse demos by a specific subject, please click one of the category links to be taken to the page for your chosen category. We are always adding new demos, so please check back often to see the latest updates."
+- Subject tag row: showing five categories (Engineering, Geography, Maths, Music, Physics — Flashcards excluded from this row)
+- Grid: demo cards sorted alphabetically by title, split into two sections separated by a horizontal rule and an h3 "Flashcards" heading — non-flashcard demos above, flashcard demos below
 
 ### `/search`
-h1 "What would you like to explore?" followed by a horizontal rule, then a left-aligned search field 314px wide and 36px tall with accessible name "Search demos" and placeholder "Type here...". No cards, no result heading, and no result count appear on initial load. After the user types, a left-aligned h2 "Search results" appears above the filtered grid.
+h1 "What would you like to explore?" followed by a horizontal rule.
+- Search field: left-aligned search field 314px wide and 36px tall with accessible name "Search demos" and placeholder "Type here..."
+- Initial state: no cards, no result heading, and no result count appear on initial load
+- Filtered state: after the user types, a left-aligned h2 "Search results" appears above the filtered grid
 
 ### `/about`
-h1 "About Academo". Lead paragraph describing Academo as a free open-source hub of interactive educational demonstrations. Two body paragraphs on HTML and JavaScript implementation and community contributions.
+h1 "About Academo".
+- Lead paragraph: describing Academo as a free open-source hub of interactive educational demonstrations
+- Body copy: two body paragraphs on HTML and JavaScript implementation and community contributions
 
 ### `/contact`
 h1 "Get in touch". Introductory paragraph: "You can find Academo on Twitter at @AcademoOrg, and on Facebook at academo.org. Alternatively, if you'd like to send us a message, you can use the form below."
@@ -35,50 +48,150 @@ h1 "Get in touch". Introductory paragraph: "You can find Academo on Twitter at @
 h1 "Submit an idea". Paragraph asking whether the visitor is a teacher needing an interactive demo, a student needing help understanding a topic, or someone with a new demo or feature idea. Second paragraph with mailto link to `hello@academo.org` with subject "Academo demo idea", asking the sender to include topic, explanation goal, and suggested interaction.
 
 ### `/privacy-policy`
-Full privacy policy article with h1 "Privacy Policy", last updated date, sections on interpretation and definitions, collecting and using personal data, types of data collected, tracking technologies and cookies, use of personal data, retention, links to other websites, changes to policy, and contact. States Academo does not use advertising or Google Analytics, loads OpenStreetMap tiles on map demos, and may open email application on mailto links. Notes browser storage is used only where demos require local state such as flashcard progress. Contact section links to `/contact`.
+Full privacy policy article with h1 "Privacy Policy" and last updated date:
+- Sections:
+  - Interpretation and definitions
+  - Collecting and using personal data
+  - Types of data collected
+  - Tracking technologies and cookies
+  - Use of personal data
+  - Retention
+  - Links to other websites
+  - Changes to policy
+  - Contact
+- States Academo does not use advertising or Google Analytics
+- Loads OpenStreetMap tiles on map demos
+- May open email application on mailto links
+- Browser storage is used only where demos require local state such as flashcard progress
+- Contact section links to `/contact`
 
 ### `/cookie-policy`
-Full cookie policy article with h1 "Cookie Policy", effective and last updated dates, sections on what cookies are, how they are used, and managing cookie preferences. States Academo does not intentionally set advertising or analytics cookies; some demos use browser storage for local state; OpenStreetMap tiles subject to third-party privacy practices. Lists browser-specific cookie management links for Chrome, Safari, Firefox, and Internet Explorer.
+Full cookie policy article with h1 "Cookie Policy" and effective and last updated dates:
+- Sections:
+  - What cookies are
+  - How they are used
+  - Managing cookie preferences
+- States Academo does not intentionally set advertising or analytics cookies
+- Some demos use browser storage for local state
+- OpenStreetMap tiles subject to third-party privacy practices
+- Browser-specific cookie management links:
+  - Chrome
+  - Safari
+  - Firefox
+  - Internet Explorer
 
 ### Category pages — `/engineering`, `/geography`, `/maths`, `/music`, `/physics`, `/flashcards`
-h1 with category label (Flashcards shows "All flashcards"). Category description paragraph unique to each subject. Below the description, a paragraph "You can filter these demos further by clicking on one of the following subcategories:" followed by tag pills linking to subcategory pages. Grid of demo cards filtered to that category, sorted alphabetically by title.
-
-Engineering subcategories: Computing, Electronics, Signals. Geography subcategories: Human Geography, Maps. Maths subcategories: Geometry, Numbers, Statistics. Music subcategories: Pitch. Physics subcategories: Astronomy, Classical Mechanics, Electricity, Light, Sound, Waves.
+- h1 with category label (Flashcards shows "All flashcards")
+- Category description paragraph unique to each subject
+- Below the description, a paragraph "You can filter these demos further by clicking on one of the following subcategories:" followed by tag pills linking to subcategory pages
+- Grid of demo cards filtered to that category, sorted alphabetically by title
+- Subcategories per subject:
+  - **Engineering**: Computing, Electronics, Signals
+  - **Geography**: Human Geography, Maps
+  - **Maths**: Geometry, Numbers, Statistics
+  - **Music**: Pitch
+  - **Physics**: Astronomy, Classical Mechanics, Electricity, Light, Sound, Waves
 
 ### Subcategory pages — `/engineering/*`, `/geography/*`, `/maths/*`, `/music/*`, `/physics/*`
-h1 with subcategory title. Optional description paragraph(s) specific to the subcategory. A link "← Back to {parent} overview" returning to the parent category page. Grid of demo cards filtered to that subcategory, sorted alphabetically.
+- h1 with subcategory title
+- Optional description paragraph(s) specific to the subcategory
+- Link "← Back to {parent} overview" returning to the parent category page
+- Grid of demo cards filtered to that subcategory, sorted alphabetically
+- Subcategory descriptions:
 
-Geometry subcategory includes the description: "Geometry is an ancient branch of maths and concerns everything to do with shapes." Light subcategory includes two description paragraphs on photon properties and light behavior. Astronomy subcategory includes a paragraph on telescopes and night-sky study. Other subcategories show no description beyond the back link.
+| Subcategory | Description |
+|-------------|-------------|
+| Geometry | "Geometry is an ancient branch of maths and concerns everything to do with shapes." |
+| Light | Two description paragraphs on photon properties and light behavior |
+| Astronomy | Paragraph on telescopes and night-sky study |
+| All others | No description beyond the back link |
 
 ### Demo detail pages — `/demos/:slug` and `/flashcards/:slug`
-Each demo page shows an h1 with the demo title (Flags of Europe shows "Flags of Europe flashcards", US States shows "US States Map Flashcards flashcards"), a blurb paragraph from the demo catalogue, optional category tag pills below the blurb, the interactive demo area, and descriptive copy below. Flashcard demos include an uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards`, placed above the h1.
+Each demo page shows:
+- h1 with the demo title (Flags of Europe shows "Flags of Europe flashcards", US States shows "US States Map Flashcards flashcards")
+- Blurb paragraph from the demo catalogue
+- Optional category tag pills below the blurb
+- Interactive demo area
+- Descriptive copy below
+- Flashcard demos include an uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards`, placed above the h1
 
 ### `/demos/logic-gate-simulator`
-h1 "Logic Gate Simulator". Short blurb. Interactive board left, toolbar right. Toolbar: node type select, "Add Node" button, "Full screen mode" button. Board starts with one INPUT toggle (off) and one OUTPUT indicator, unconnected. Below the board: six reference sections — NOT, AND, NAND, OR, NOR, XOR — each with heading, 100×100 gate symbol, description paragraph, and truth table.
+- h1 "Logic Gate Simulator"
+- Short blurb
+- Split layout: interactive board left, toolbar right
+- Toolbar:
+  - Node type select
+  - "Add Node" button
+  - "Full screen mode" button
+- Board starts with one INPUT toggle (off) and one OUTPUT indicator, unconnected
+- Below the board: six reference sections — NOT, AND, NAND, OR, NOR, XOR — each with heading, 100×100 gate symbol, description paragraph, and truth table:
+
+| Gate | Symbol size | Contents |
+|------|-------------|----------|
+| NOT | 100×100 | Heading, description, truth table |
+| AND | 100×100 | Heading, description, truth table |
+| NAND | 100×100 | Heading, description, truth table |
+| OR | 100×100 | Heading, description, truth table |
+| NOR | 100×100 | Heading, description, truth table |
+| XOR | 100×100 | Heading, description, truth table |
 
 ### `/demos/3d-vector-plotter`
-h1 "3D Vector Plotter". Short blurb. Split layout: 3D canvas left, controls right. Controls: "Draw" button, Vector v1 (Blue) default "(3,-1,4)", Vector v2 (Red) default "(-2,3,1)", three checkboxes for resultant (purple), difference (turquoise), and cross product (green), "Add a Vector" and "Add an Expression" buttons, error message area. Below: explanatory copy with rendered formulas for vector addition, subtraction, and cross product.
+- h1 "3D Vector Plotter"
+- Short blurb
+- Split layout: 3D canvas left, controls right
+- Controls:
+  - "Draw" button
+  - Vector v1 (Blue) default "(3,-1,4)"
+  - Vector v2 (Red) default "(-2,3,1)"
+  - Three checkboxes:
+    - Resultant (purple)
+    - Difference (turquoise)
+    - Cross product (green)
+  - "Add a Vector" and "Add an Expression" buttons
+  - Error message area
+- Below: explanatory copy with rendered formulas for vector addition, subtraction, and cross product
 
 ### `/demos/19-tet-keyboard`
-h1 "19 TET Keyboard". Short blurb. SVG keyboard with 20 playable keys in white, black, and grey. Below: explanatory copy on 12-TET vs 19-TET, equal temperament ratios, keyboard layout, and computer keyboard mapping, ending with a keyboard mapping diagram image.
+- h1: "19 TET Keyboard"
+- Blurb: Short blurb.
+- Layout: SVG keyboard with 20 playable keys in white, black, and grey.
+- Controls: Playable keys via mouse and computer keyboard; below explanatory copy on 12-TET vs 19-TET, equal temperament ratios, keyboard layout, and computer keyboard mapping, ending with a keyboard mapping diagram image.
 
 ### `/demos/virtual-oscilloscope`
-h1 "Virtual Oscilloscope". Short blurb. Split layout: oscilloscope screen left, controls right. Controls in order: Input select (Live / Sine / Square), "Freeze Live Input" checkbox, frequency number and slider with Hz unit, gain number and slider, seconds/div select, volts/div select, horizontal offset slider, vertical offset slider, color scheme select, status area. Below: explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
+- h1: "Virtual Oscilloscope"
+- Blurb: Short blurb.
+- Layout: Split layout with oscilloscope screen on the left and controls on the right.
+- Controls: Input select (Live / Sine / Square), "Freeze Live Input" checkbox, frequency number and slider with Hz unit, gain number and slider, seconds/div select, volts/div select, horizontal offset slider, vertical offset slider, color scheme select, status area; below explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
 
 ### `/demos/amplitude-modulation`
-h1 "Amplitude Modulation". Short blurb. Split layout with canvas waveform display and controls for carrier frequency, modulator frequency, and modulation index sliders. A "Hear it" button toggles audio output. Below: explanatory copy on AM principles with the formula y(t) = A_c [1 + m·cos(2πf_m t)] · cos(2πf_c t) rendered as formatted mathematical notation.
+- h1: "Amplitude Modulation"
+- Blurb: Short blurb.
+- Layout: Split layout with canvas waveform display on one side and controls on the other.
+- Controls: Carrier frequency slider, modulator frequency slider, modulation index slider, and "Hear it" button toggling audio output; below explanatory copy on AM principles with the formula y(t) = A_c [1 + m·cos(2πf_m t)] · cos(2πf_c t) rendered as formatted mathematical notation.
 
 ### `/demos/rot-13-cipher`
-h1 "ROT-13 Encrypter/decrypter". Short blurb. Two text areas side by side: input on the left, output on the right updating live as the user types. Below: explanatory copy on ROT-13 as a Caesar cipher with shift 13, its self-inverse property, and historical context.
+- h1: "ROT-13 Encrypter/decrypter"
+- Blurb: Short blurb.
+- Layout: Two text areas side by side with input on the left and output on the right.
+- Controls: Live-updating output as the user types; below explanatory copy on ROT-13 as a Caesar cipher with shift 13, its self-inverse property, and historical context.
 
 ### `/demos/hypocycloid`
-h1 "Hypocycloid animation". Short blurb. Canvas showing two circles with animated rolling motion, and controls for inner radius, outer radius, and animation speed sliders plus Start/Stop toggle. Below: explanatory copy on hypocycloid parametric equations.
+- h1: "Hypocycloid animation"
+- Blurb: Short blurb.
+- Layout: Canvas showing two circles with animated rolling motion.
+- Controls: Inner radius slider, outer radius slider, animation speed slider, and Start/Stop toggle; below explanatory copy on hypocycloid parametric equations.
 
 ### `/demos/estimating-pi-monte-carlo`
-h1 "Estimating Pi using the Monte Carlo Method". Short blurb. Canvas showing unit square with inscribed circle and scattered random points, plus Start and Stop buttons and live readouts for points inside, total points, and current pi estimate. Below: explanatory copy on Monte Carlo estimation.
+- h1: "Estimating Pi using the Monte Carlo Method"
+- Blurb: Short blurb.
+- Layout: Canvas showing unit square with inscribed circle and scattered random points.
+- Controls: Start and Stop buttons with live readouts for points inside, total points, and current pi estimate; below explanatory copy on Monte Carlo estimation.
 
 ### `/demos/azimuth-calculator`
-h1 "Azimuth Calculator". Short blurb. Interactive map with a pin marker for origin location and a star marker for target direction, connected by a red line. Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time. A "Set marker to you current location" button uses browser geolocation to center the map and reposition markers. Below: explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
+- h1: "Azimuth Calculator"
+- Blurb: Short blurb.
+- Layout: Interactive map with a pin marker for origin location and a star marker for target direction, connected by a red line.
+- Controls: Dragging either marker updates the azimuth angle in degrees and 16-point compass direction readouts in real time; "Set marker to you current location" button uses browser geolocation to center the map and reposition markers; below explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
 
 ### `/demos/colour-temperature-relationship`
 h1 "Colour-Temperature Relationship". Short blurb. Kelvin temperature slider with live color swatch display showing the resulting RGB color and hex value. Below: explanatory copy on black-body radiation and color temperature.
@@ -96,7 +209,13 @@ h1 "Geodesics on the Earth". Short blurb. Interactive map showing two draggable 
 h1 "Capital Cities Map". Short blurb. Interactive world map with circle markers at capital city locations; clicking a marker opens a popup showing the city name, country name, and a "Zoom In" button that centers the map on that capital at zoom level 8. Below: explanatory copy on capital cities.
 
 ### `/flashcards/flags-of-europe` and `/flashcards/us-states`
-Uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards`, placed above the h1. h1 with flashcard set title and short blurb. Action bar with "View All Terms", "Shuffle", "Flip All Cards", "Reset". Stage with Previous button, single flashcard, Next button, slide counter with skip-to-start and skip-to-end. Click card to flip between name and image (flag SVG for Europe, US state map SVG for US States). "View All Terms" opens a modal table: Flags of Europe shows five columns — #, Country, Flag thumbnail 72×48, Visible checkbox, and Shown side toggle button; US States shows three columns — State, Map thumbnail, and Visible checkbox (no Shown side control). Below: for Flags of Europe, "Useful notes" section with seven paragraphs on easily confused flags; for US States, a credits paragraph.
+- h1: "Flags of Europe flashcards" / "US States Map Flashcards flashcards" with short blurb; uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards` placed above the h1.
+- Blurb: Short blurb for each set.
+- Layout: Action bar with "View All Terms", "Shuffle", "Flip All Cards", "Reset"; stage with Previous button, single flashcard, Next button, slide counter with skip-to-start and skip-to-end.
+- Controls: Click card to flip between name and image (flag SVG for Europe, US state map SVG for US States); "View All Terms" opens a modal table
+  - Flags of Europe shows five columns — #, Country, Flag thumbnail 72×48, Visible checkbox, and Shown side toggle button
+  - US States shows three columns — State, Map thumbnail, and Visible checkbox (no Shown side control)
+  - Below: for Flags of Europe, "Useful notes" section with seven paragraphs on easily confused flags; for US States, a credits paragraph.
 
 ### 404
 h1 "Sorry, we can't find what you're looking for". Paragraph with link to `/demos`.
@@ -171,11 +290,35 @@ Font family "Open Sans", Arial, sans-serif at weights 400, 700, 800. Material Sy
 | Error/status | 13px | — | `#8a1f11` | — |
 
 ### Spacing and layout
-Body min-width 320px, margin 0. Wrapper max-width 1200px, `margin: 20px auto 0`, min-height 100vh, white background, shadow `0 0 3px #c8c8c8`. Every route begins with a sponsor spacer: 130px minimum height, 90% width centered, 20px bottom margin, 20px vertical padding, flex-centered content area (empty by design as a visual spacer in the homepage layout). Main content width 90% (92% ≤760px, 100% with 10px side padding ≤520px), `padding-bottom: 70px`.
+- Body: min-width 320px, margin 0
+- Wrapper: max-width 1200px, `margin: 20px auto 0`, min-height 100vh, white background, shadow `0 0 3px #c8c8c8`
+- Sponsor spacer (every route): 130px minimum height, 90% width centered, 20px bottom margin, 20px vertical padding, flex-centered content area (empty by design as a visual spacer in the homepage layout)
+- Main content: width 90% (92% ≤760px, 100% with 10px side padding ≤520px), `padding-bottom: 70px`
 
-Global header upper bar is 77px tall total, achieved by 25px top and bottom padding around the 32px wordmark positioned 10px below the bar top edge (15px 20px padding and 26px wordmark ≤760px). Header lower bar has 10px vertical padding and 20px horizontal padding (12px horizontal ≤520px) with 1px teal top border. Header inner container max-width 1200px centered. Primary navigation floats right with 20px gap and 40px left margin; includes About, Search, Contact, and Submit an idea links. Secondary navigation is a flex row with 20px gap, max-width 1200px centered, wrapping to multiple rows on narrow viewports, showing All plus six category links (Engineering, Geography, Maths, Music, Physics, Flashcards with stacked-square icon).
+- Global header upper bar: 77px tall total, achieved by 25px top and bottom padding around the 32px wordmark positioned 10px below the bar top edge (15px 20px padding and 26px wordmark ≤760px)
+- Header lower bar: 10px vertical padding and 20px horizontal padding (12px horizontal ≤520px) with 1px teal top border
+- Header inner container: max-width 1200px centered
+- Primary navigation: floats right with 20px gap and 40px left margin
+  - Includes About, Search, Contact, and Submit an idea links
+- Secondary navigation: flex row with 20px gap, max-width 1200px centered, wrapping to multiple rows on narrow viewports
+  - Shows All plus six category links (Engineering, Geography, Maths, Music, Physics, Flashcards with stacked-square icon)
 
-Standard horizontal rule has 20px vertical margin and 1px `#ecf0f1` top border; large variant 60px vertical margin. Paragraph bottom margin 20px. Intro paragraphs max-width 650px centered. About paragraphs max-width 620px. Contact section max-width 600px. Demo description paragraphs max-width 880px. Search panel on `/demos` has max-width 540px, 8px grid gap, 30px top margin auto-centered. On `/search` the panel is block layout with no max-width, left-aligned, same top margin. Contact form uses 15px vertical gap between fields. The Contact Us header has 1px dotted `#cccccc` bottom border, 14.3px bottom padding, 5px bottom margin, and 1% horizontal padding. Name and Email field containers are 50% width on desktop. Labels have 3px bottom padding. Inputs have 8px padding and 44px minimum height; textarea minimum height 136px. The Submit button has 0 7px horizontal padding and no vertical padding, relying on its 22px height plus 2px outset border.
+- Standard horizontal rule: 20px vertical margin and 1px `#ecf0f1` top border
+  - Large variant: 60px vertical margin
+- Paragraph bottom margin: 20px
+- Intro paragraphs: max-width 650px centered
+- About paragraphs: max-width 620px
+- Contact section: max-width 600px
+- Demo description paragraphs: max-width 880px
+- Search panel on `/demos`: max-width 540px, 8px grid gap, 30px top margin auto-centered
+- On `/search` panel: block layout with no max-width, left-aligned, same top margin
+- Contact form: 15px vertical gap between fields
+- Contact Us header: 1px dotted `#cccccc` bottom border, 14.3px bottom padding, 5px bottom margin, and 1% horizontal padding
+- Name and Email field containers: 50% width on desktop
+- Labels: 3px bottom padding
+- Inputs: 8px padding and 44px minimum height
+  - Textarea minimum height: 136px
+- Submit button: 0 7px horizontal padding and no vertical padding, relying on its 22px height plus 2px outset border
 
 Tag pills have 8px 12px padding, 44px minimum height, 10px gap between pills, centered overall (left-aligned ≤520px except intro tags which stay centered). Buttons in toolbars have 44px minimum height (contact and logic toolbar) or 38px (vector actions), with 10px 16px or 9px 12px padding respectively.
 
@@ -192,7 +335,27 @@ On the homepage popular section, the heading uses 1.5em size, 700 weight, normal
 | ≤520px | Header lower side padding 20→12px. Main 92→100% width with 10px side padding. Tags left-align (intro stays centered). Footer left-aligns, text 15→13px. |
 
 ### Component dimensions
-Logo mark image 40px wide by 36px tall with 10px right margin and vertical-align middle, positioned 10px below bar top via absolute positioning on the logo anchor (30×28px with static positioning ≤760px). Featured logos max 160px wide in 84px minimum height containers with 20px margin. Logic gate node 80×80px white card; ports 12px circles; toolbar 240px wide with 20px padding and 16px gap; fullscreen toolbar fixed 32px from viewport edges (16px ≤950px) at 240px width (220px ≤950px) with shadow. Vector plotter, oscilloscope, and other split-layout demos use 1fr + 270px grid, 20px gap, stacking at 950px; canvas containers min-height 280px with 1px `#d9d9d9` border. Range inputs 10px track height with custom fill gradient; thumb 16×18px. Flashcard image 320×210; table thumbnail 72×48. Gate symbol images 100×100. 19 TET SVG viewBox 0 0 184 120; white keys 23×120, black 13×80, grey 13×50. Keyboard mapping diagram 500×324. Oscilloscope embed textarea max 620px wide, 48px minimum height. Contact form header h2 at 20.8px regular weight in Lucida stack with dotted separator below. Flashcards breadcrumb uses 24px Material Symbol icon vertically aligned to text baseline with 4px right gap.
+- Logo mark image: 40px wide by 36px tall with 10px right margin and vertical-align middle, positioned 10px below bar top via absolute positioning on the logo anchor (30×28px with static positioning ≤760px)
+- Featured logos: max 160px wide in 84px minimum height containers with 20px margin
+- Logic gate node: 80×80px white card
+  - Ports: 12px circles
+  - Toolbar: 240px wide with 20px padding and 16px gap
+  - Fullscreen toolbar: fixed 32px from viewport edges (16px ≤950px) at 240px width (220px ≤950px) with shadow
+- Vector plotter, oscilloscope, and other split-layout demos: 1fr + 270px grid, 20px gap, stacking at 950px
+  - Canvas containers: min-height 280px with 1px `#d9d9d9` border
+- Range inputs: 10px track height with custom fill gradient
+  - Thumb: 16×18px
+- Flashcard image: 320×210
+  - Table thumbnail: 72×48
+- Gate symbol images: 100×100
+- 19 TET SVG: viewBox 0 0 184 120
+  - White keys: 23×120
+  - Black keys: 13×80
+  - Grey keys: 13×50
+- Keyboard mapping diagram: 500×324
+- Oscilloscope embed textarea: max 620px wide, 48px minimum height
+- Contact form header h2: 20.8px regular weight in Lucida stack with dotted separator below
+- Flashcards breadcrumb: 24px Material Symbol icon vertically aligned to text baseline with 4px right gap
 
 ---
 
@@ -249,6 +412,8 @@ Logo mark image 40px wide by 36px tall with 10px right margin and vertical-align
 
 ## 5. Responsive, accessibility, animation, and error states
 
+This section covers Global Design (responsive layout, breakpoints, animation) and Global Accessibility (semantic landmarks, keyboard access, focus visibility, live regions). Animation and error/empty states are included here as cross-cutting Global Design and accessibility concerns.
+
 **Responsive:** Minimum supported width 320px. Layouts stack from two-column to single-column at 950px for demos with sidebars. Card grid collapses 4→3→2→1 columns across breakpoints. Header navigation wraps to multiple rows. All interactive targets meet 44px minimum height where specified; contact submit button achieves this via invisible hit-area extension.
 
 **Accessibility:** Semantic landmarks — header with labeled navigation, main, footer, sections with aria-labelledby, search form with role search, dialog with role dialog and aria-modal. One h1 per page, hierarchical h2/h3/h5. Active nav link marked aria-current page. Toggle buttons use aria-pressed. Live regions (aria-live polite) on search results, result count, demo list, and flashcard carousel. Form inputs paired with labels; required fields marked required and indicated visually with red asterisk. Images have descriptive alt text; decorative images aria-hidden or empty alt. SVG keyboard keys have role button, tabindex, and aria-label. Flashcard flip button and breadcrumb link have accessible names. Focus visible outline 3px solid orange with 3px offset on all interactive elements. Color is never the sole indicator.
@@ -260,6 +425,8 @@ Logo mark image 40px wide by 36px tall with 10px right margin and vertical-align
 ---
 
 ## 6. Asset references
+
+This inventory supports Global Content and Data and maps to Product Surfaces in §2.
 
 Demo thumbnails — `public/assets/demos/19-tet-keyboard.png`, `public/assets/demos/3d-vector-plotter.png`, `public/assets/demos/amplitude-modulation.png`, `public/assets/demos/azimuth-calculator.png`, `public/assets/demos/capital-cities-map.png`, `public/assets/demos/colour-temperature-relationship.png`, `public/assets/demos/electric-field-line-simulator.png`, `public/assets/demos/estimating-pi-monte-carlo.png`, `public/assets/demos/flags-of-europe.png`, `public/assets/demos/geodesics.png`, `public/assets/demos/hypocycloid.png`, `public/assets/demos/logic-gate-simulator.png`, `public/assets/demos/rot-13-cipher.png`, `public/assets/demos/simple-pendulum.png`, `public/assets/demos/us-states-map.png`, `public/assets/demos/virtual-oscilloscope.png`.
 
@@ -290,6 +457,6 @@ The application surface includes the following outbound links, each opening in a
 
 All other navigation stays within local routes.
 
-### Scope note
+### Scope note — Scope exclusions
 
-The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
+This subsection defines scope exclusions. The product is a static educational directory delivering the sixteen interactive demonstrations documented above; it does not provide user accounts, backend storage, or integrated analytics, commenting, or media-hosting systems.
