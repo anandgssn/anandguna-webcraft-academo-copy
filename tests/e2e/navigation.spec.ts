@@ -26,5 +26,5 @@ test("lazy-loaded visual engines mount on their demo routes", async ({ page }) =
 
   await page.goto("/demos/simple-pendulum");
   await expect(page.locator(".simple-pendulum-demo canvas")).toBeVisible();
-  await expect(page.locator("[data-mathjax] svg").first()).toBeVisible();
+  await expect(page.locator("[data-mathjax] .katex").first()).toBeVisible();
 });

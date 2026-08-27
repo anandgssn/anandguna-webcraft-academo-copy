@@ -191,7 +191,7 @@ export const demos: DemoItem[] = [
     slug: "us-states",
     category: "Flashcards",
     tags: ["states", "maps", "usa", "flashcards"],
-    description: "Learn the capitals of Europe with these flashcards.",
+    description: "Learn the shapes and locations of US states with these flashcards.",
     thumbnail: "/assets/demos/us-states-map.png"
   }
 ];
