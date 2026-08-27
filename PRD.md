@@ -178,7 +178,15 @@ Each demo page shows:
   - Seconds/div select and volts/div select
   - Horizontal offset slider and vertical offset slider
   - Color scheme select and status area
-- Below: explanatory copy on oscilloscope purpose, default signal, live input, freeze, gain, timebase worked example, volts/div example, offsets, four named color schemes, and readonly iframe embed code.
+- Below: explanatory copy on oscilloscope topics:
+  - Purpose and default signal
+  - Live input and freeze
+  - Gain
+  - Timebase worked example
+  - Volts/div example
+  - Offsets
+  - Four named color schemes
+  - Readonly iframe embed code
 
 ### `/demos/amplitude-modulation`
 - h1: "Amplitude Modulation"
@@ -385,7 +393,9 @@ Font family "Open Sans", Arial, sans-serif at weights 400, 700, 800. Material Sy
   - Textarea minimum height: 136px
 - Submit button: 0 7px horizontal padding and no vertical padding, relying on its 22px height plus 2px outset border
 
-Tag pills have 8px 12px padding, 44px minimum height, 10px gap between pills, centered overall (left-aligned ≤520px except intro tags which stay centered). Buttons in toolbars have 44px minimum height (contact and logic toolbar) or 38px (vector actions), with 10px 16px or 9px 12px padding respectively.
+Tag pills:
+- 8px 12px padding, 44px minimum height, 10px gap between pills, centered overall (left-aligned ≤520px except intro tags which stay centered)
+- Buttons in toolbars: 44px minimum height (contact and logic toolbar) or 38px (vector actions), with 10px 16px or 9px 12px padding respectively
 
 ### Card dimensions
 Demo thumbnail image uses aspect-ratio 260/170 with 1px `#c8c8c8` border; opacity transitions to 0.85 on hover over 0.25s. Title has 10px top margin, 14px 800 weight, color transitions to orange over 0.25s. Card grid gap 28px row / 24px column. Images inside cards use content-box sizing so the 1px border sits outside the 260px content width.
