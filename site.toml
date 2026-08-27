@@ -6,7 +6,7 @@ description = "Academo educational demo site with category pages and sixteen fun
 category = "replication"
 
 [site.tech]
-stack = ["Vite", "TypeScript", "Three.js", "MathJax", "Canvas", "Web Audio"]
+stack = ["Vite", "TypeScript", "Three.js", "KaTeX", "Canvas", "Web Audio"]
 hosting = "vercel"
 hosting_access_granted = true
 

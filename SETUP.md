@@ -65,7 +65,7 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 - US States Map Flashcards uses 51 local SVG map assets copied from the original Academo flashcard page and stored in `public/assets/us-states/`.
 - The Academo header mark, navy-backed favicon, and featured-publication logo images are local copies from the original site in `public/assets/logos/`.
 - Fonts: Google Fonts `Open Sans` for Academo typography and `Material Symbols Outlined` for the flashcard control icons, matching the original page.
-- Logic Gate Simulator, 3D Vector Plotter, Hypocycloid animation, 19 TET Keyboard, Virtual Oscilloscope, and Flags of Europe are implemented locally with client-side TypeScript. 3D Vector Plotter uses Three.js, and explanatory formulas use the local `mathjax` npm package (Apache-2.0) for SVG math rendering. Hypocycloid animation uses Canvas. 19 TET Keyboard uses the browser Web Audio API. Virtual Oscilloscope uses Canvas and optional browser microphone input. Flags of Europe uses local SVG assets and browser localStorage for card state.
+- Logic Gate Simulator, 3D Vector Plotter, Hypocycloid animation, 19 TET Keyboard, Virtual Oscilloscope, and Flags of Europe are implemented locally with client-side TypeScript. 3D Vector Plotter uses Three.js, and explanatory formulas use the local `katex` npm package (MIT) for accessible HTML math rendering. Hypocycloid animation uses Canvas. 19 TET Keyboard uses the browser Web Audio API. Virtual Oscilloscope uses Canvas and optional browser microphone input. Flags of Europe uses local SVG assets and browser localStorage for card state.
 
 ## External Services
 
@@ -73,7 +73,7 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 - The contact form uses a client-side `mailto:` handoff and does not send email through a backend.
 - The Submit an idea page replaces the original Disqus comments with a direct `mailto:hello@academo.org` link and does not store submissions.
 - Footer Privacy Policy and Cookie Policy routes describe Academo's static hosting, local browser state, mailto handoffs, and OpenStreetMap tile requests; they do not claim advertising or analytics integrations.
-- Third-party runtime requests are limited to Google Fonts for `Open Sans` and `Material Symbols Outlined`, plus attributed OpenStreetMap tiles on the three map demos. Three.js and MathJax are bundled from local npm dependencies.
+- Third-party runtime requests are limited to Google Fonts for `Open Sans` and `Material Symbols Outlined`, plus attributed OpenStreetMap tiles on the three map demos. Three.js and KaTeX are bundled from local npm dependencies.
 - The Amplitude Modulation page includes an explicit user-initiated link to CodePen's new-pen editor; no source code or user data is posted automatically.
 - Deployment is expected to use private Vercel hosting with the Web Craft Meta-IP firewall rule.
 
