@@ -88,9 +88,9 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 
 ## Narration / Walkthrough Videos
 
-> **Note:** The two links below are **superseded — recorded with microphone off (no audio track, 1747s and 1240s)** per T285801546 audit. They are kept for reference only; a re-recorded narrated desktop+mobile pair with microphone enabled is pending and will replace them. Reviewer: please wait for the new `pxl.cl` links.
+> **Note:** The two links below are **SUPERSEDED — recorded with microphone off (no audio track, 1747 s and 1240 s)** per T285801546 audit. They are kept for reference only; a re-recorded narrated desktop + mobile pair with microphone enabled is pending and will replace them. Reviewer: please rely on the future narrated links.
 
-- ~~Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD~~ — superseded, no audio
-- ~~Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8~~ — superseded, no audio
+- Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD — **SUPERSEDED — no audio track (1747 s, audio=n)** per T285801546 B7; pending mic-enabled re-record
+- Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8 — **SUPERSEDED — no audio track (1240 s, audio=n)** per T285801546 B7; pending mic-enabled re-record
 
-<!-- Pending B1-B6: re-record desktop + mobile passes with mic enabled, narrating cause-and-effect while navigating all routes, interactions, animations, and responsive breakpoints; verify with ffprobe single audio track, upload to Pixelcloud, and replace superseded links above. -->
+<!-- Pending B1-B6: re-record desktop + mobile passes with mic enabled, narrating cause-and-effect while navigating every sub-page/route, hover/click/swipe/form-submit incl. validation/success/error, scroll/parallax/lazy-load/page-load/transition animations, and responsive layout at each PRD breakpoint; verify with `ffprobe -show_streams -select_streams a` (single audio track) and `ffplay`, upload to Pixelcloud, and replace superseded links above with the new `pxl.cl` desktop + mobile pair per T285801546. -->
