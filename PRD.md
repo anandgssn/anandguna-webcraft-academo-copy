@@ -424,9 +424,9 @@ This section covers Global Design (responsive layout, breakpoints, animation) an
 
 ---
 
-## 6. Asset references
+## 6. Global Content and Data
 
-This inventory supports Global Content and Data and maps to Product Surfaces in §2.
+This section is the Global Content and Data inventory. It supports Product Surfaces in §2 and lists reusable content and assets.
 
 Demo thumbnails — `public/assets/demos/19-tet-keyboard.png`, `public/assets/demos/3d-vector-plotter.png`, `public/assets/demos/amplitude-modulation.png`, `public/assets/demos/azimuth-calculator.png`, `public/assets/demos/capital-cities-map.png`, `public/assets/demos/colour-temperature-relationship.png`, `public/assets/demos/electric-field-line-simulator.png`, `public/assets/demos/estimating-pi-monte-carlo.png`, `public/assets/demos/flags-of-europe.png`, `public/assets/demos/geodesics.png`, `public/assets/demos/hypocycloid.png`, `public/assets/demos/logic-gate-simulator.png`, `public/assets/demos/rot-13-cipher.png`, `public/assets/demos/simple-pendulum.png`, `public/assets/demos/us-states-map.png`, `public/assets/demos/virtual-oscilloscope.png`.
 
@@ -444,7 +444,7 @@ Fonts and icons — Open Sans 400/700/800 and Material Symbols Outlined. Materia
 
 ---
 
-## 7. External links and attributions
+### External links and attributions
 
 The application surface includes the following outbound links, each opening in a new tab with `rel="noreferrer"` except where noted:
 
