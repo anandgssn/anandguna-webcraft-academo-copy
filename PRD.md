@@ -164,7 +164,8 @@ Each demo page shows:
 - h1: "19 TET Keyboard"
 - Blurb: Short blurb.
 - Layout: SVG keyboard with 20 playable keys in white, black, and grey.
-- Controls: Playable keys via mouse and computer keyboard; below explanatory copy on 12-TET vs 19-TET, equal temperament ratios, keyboard layout, and computer keyboard mapping, ending with a keyboard mapping diagram image.
+- Controls: Playable keys via mouse and computer keyboard
+- Below: explanatory copy on 12-TET vs 19-TET, equal temperament ratios, keyboard layout, and computer keyboard mapping, ending with a keyboard mapping diagram image
 
 ### `/demos/virtual-oscilloscope`
 - h1: "Virtual Oscilloscope"
