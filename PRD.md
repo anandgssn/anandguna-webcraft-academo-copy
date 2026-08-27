@@ -16,8 +16,10 @@ Centered h1 "Academo".
 - Popular demos grid: three demo cards in a centered row — Virtual Oscilloscope, 3D Vector Plotter, Logic Gate Simulator
   - Heading: 1.5em size, 700 weight, normal line height, 0.83em vertical margin, centered, with link portion in title color at 70% opacity shifting to orange on hover
   - Card list:
-    - Flex wrap centered, with negative 18px horizontal margin on container to offset card margins
-    - Each card list item is `calc(25% − 40px)` wide with 20px margin on all sides
+    - Flex wrap centered
+    - Negative 18px horizontal margin on container to offset card margins
+    - Each card list item is `calc(25% − 40px)` wide
+    - Margin on all sides 20px
       - Horizontal space between adjacent cards 44px (20px right margin + 4px flex gap + 20px left margin)
       - Vertical space between rows 40px (20px bottom + 20px top)
     - Images use content-box sizing so 1px border sits outside 260px content width
@@ -418,7 +420,7 @@ The following verification matrix summarizes high-signal checks for the product.
 | Demos — Oscilloscope | Input Live requests mic and disables frequency controls; Sine/Square enables them; Freeze, gain, timebase, offsets, and color scheme each update waveform as described |
 | Demos — AM / ROT-13 / Hypocycloid / Pi / Azimuth / Colour / E-Field / Pendulum / Geodesics / Capitals | Each demo's primary interaction (AM frequency sliders + Hear toggle; ROT-13 live transform; Hypocycloid radius + Start/Stop; Pi Start/Stop with live estimate; Azimuth marker drag + geolocation; Colour Kelvin slider; E-Field drag + charge slider; Pendulum length + Start/Reset; Geodesics marker drag with readouts; Capitals marker popup + Zoom In) produces the described real-time updates |
 | Flashcards | Card flip between name/image; View All Terms modal with per-set table (Flags: 5 columns including Shown side; US States: 3 columns); Shuffle/Flip All/Reset/Previous/Next/Skip and Visibility/Shown side toggles; keyboard Shift/ArrowLeft/ArrowRight; empty-state `No visible flashcards` with disabled nav and 0/0 counter |
-| Global | Responsive breakpoints 950/760/520 collapse as specified; accessibility landmarks, aria-current, live regions, focus outline, and alt text as in §5; animations and transitions as in §3 |
+| Global | Responsive breakpoints 950/760/520 collapse as specified; see §3 Breakpoints and §5 for accessibility (landmarks, aria-current, live regions, focus outline, alt text) and §3 for animations/transitions |
 
 ---
 
