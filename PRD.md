@@ -418,9 +418,21 @@ The following verification matrix summarizes high-signal checks for the product.
 | Demos — 3D Vector | Draw renders vectors or shows error naming invalid field; Add Vector/Expression appends inputs; 3D drag rotates and scroll zooms |
 | Demos — 19 TET | Pressing SVG or keyboard key plays sine tone with highlight; release stops tone |
 | Demos — Oscilloscope | Input Live requests mic and disables frequency controls; Sine/Square enables them; Freeze, gain, timebase, offsets, and color scheme each update waveform as described |
-| Demos — AM / ROT-13 / Hypocycloid / Pi / Azimuth / Colour / E-Field / Pendulum / Geodesics / Capitals | Each demo's primary interaction (AM frequency sliders + Hear toggle; ROT-13 live transform; Hypocycloid radius + Start/Stop; Pi Start/Stop with live estimate; Azimuth marker drag + geolocation; Colour Kelvin slider; E-Field drag + charge slider; Pendulum length + Start/Reset; Geodesics marker drag with readouts; Capitals marker popup + Zoom In) produces the described real-time updates |
-| Flashcards | Card flip between name/image; View All Terms modal with per-set table (Flags: 5 columns including Shown side; US States: 3 columns); Shuffle/Flip All/Reset/Previous/Next/Skip and Visibility/Shown side toggles; keyboard Shift/ArrowLeft/ArrowRight; empty-state `No visible flashcards` with disabled nav and 0/0 counter |
-| Global | Responsive breakpoints 950/760/520 collapse as specified; see §3 Breakpoints and §5 for accessibility (landmarks, aria-current, live regions, focus outline, alt text) and §3 for animations/transitions |
+| Demos — AM | AM frequency sliders + Hear toggle produce real-time waveform and audio updates |
+| Demos — ROT-13 | ROT-13 live transform in output field |
+| Demos — Hypocycloid | Radius sliders redraw curve; Start/Stop toggles animation |
+| Demos — Pi | Start/Stop with live pi estimate and point counters |
+| Demos — Azimuth | Marker drag updates azimuth + compass; geolocation button centers map |
+| Demos — Colour | Kelvin slider updates swatch + hex |
+| Demos — E-Field | Drag charge + charge slider −5→+5 redraws field lines |
+| Demos — Pendulum | Length sliders + Start/Reset oscillate pendulums |
+| Demos — Geodesics | Marker drag updates straight line, geodesic, coordinates, heading |
+| Demos — Capitals | Marker popup shows city/country + Zoom In to zoom 8 |
+| Flashcards — Flip | Card flip between name/image |
+| Flashcards — Modal | View All Terms modal with per-set table (Flags 5-col including Shown side; US States 3-col) |
+| Flashcards — Controls | Shuffle, Flip All, Reset, Previous/Next/Skip, Visibility/Shown side toggles; keyboard Shift/ArrowLeft/ArrowRight |
+| Flashcards — Empty | Empty-state `No visible flashcards` with disabled nav and 0/0 counter |
+| Global | Responsive breakpoints 950/760/520 collapse as specified; see §3 Breakpoints and §5 for accessibility and §3 for animations/transitions |
 
 ---
 
