@@ -4,17 +4,6 @@
 
 Academo is a free directory of interactive educational demonstrations for students, teachers, and self-guided learners. No registration, no fees, no backend services. Six subject areas — Engineering, Geography, Maths, Music, Physics, Flashcards — each with multiple interactive demos organized into subcategories. The site is a static single-page application.
 
-Reference screenshots in `screenshots/` capture the target visual style:
-
-| File | Route | Device |
-|------|-------|--------|
-| `replica-home.png` | `/` homepage | desktop |
-| `replica-home-mobile.png` | `/` homepage | mobile 390×844 |
-| `replica-physics.png` | `/physics` category page | desktop |
-| `replica-flashcards.png` | `/flashcards/flags-of-europe` | desktop |
-
-A narrated walkthrough video covering all sixteen demos, category and subcategory routes, flashcard modals, canvas animations, form interactions, and mobile responsive behavior should accompany the submission.
-
 ---
 
 ## 2. Route-level visible requirements

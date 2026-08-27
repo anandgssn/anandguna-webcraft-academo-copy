@@ -88,5 +88,9 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 
 ## Narration / Walkthrough Videos
 
-- Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD
-- Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8
+> **Note:** The two links below are **superseded — recorded with microphone off (no audio track, 1747s and 1240s)** per T285801546 audit. They are kept for reference only; a re-recorded narrated desktop+mobile pair with microphone enabled is pending and will replace them. Reviewer: please wait for the new `pxl.cl` links.
+
+- ~~Full product walkthrough (all 16 demos, categories, search, flashcards, maps with marker icons, math rendering via KaTeX): https://pxl.cl/bZkfD~~ — superseded, no audio
+- ~~Previous walkthrough (pre-bugfixes): https://pxl.cl/bN1x8~~ — superseded, no audio
+
+<!-- Pending B1-B6: re-record desktop + mobile passes with mic enabled, narrating cause-and-effect while navigating all routes, interactions, animations, and responsive breakpoints; verify with ffprobe single audio track, upload to Pixelcloud, and replace superseded links above. -->
