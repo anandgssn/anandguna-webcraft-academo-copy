@@ -88,4 +88,7 @@ The project ownership has been transferred to the AAI Web Craft team. Future pro
 
 ## Narration / Walkthrough Videos
 
-- Temporary narrated walkthrough placeholder pending the replacement recording: https://pxl.cl/pending
+- Desktop walkthrough — narrated with microphone enabled, covering all sixteen demos, category and subcategory routes, flashcard modals, canvas animations, form interactions including validation/success/error, scroll/parallax/lazy-load/page-load/transition animations, and responsive layout at 950/760/520 breakpoints (cause-and-effect narration, 6m54s, 1280×800, single audio track verified via `ffprobe -show_streams -select_streams a`): https://pxl.cl/cGSL8
+- Mobile walkthrough — narrated with microphone enabled, covering touch interactions, swipe, and responsive layout at 390×844 (1m48s, 390×844, single audio track verified via `ffprobe`): https://pxl.cl/cGSLj
+
+> **Superseded (per T285801546 B7, recorded with mic off, no audio track):** Full product walkthrough (pre-fix) — https://pxl.cl/bZkfD (1747s, audio=n) and previous walkthrough — https://pxl.cl/bN1x8 (1240s, audio=n) — kept for reference; reviewer should watch the narrated desktop + mobile pair above. Both new recordings verified to have a single audio track with `ffprobe -hide_banner -show_streams -select_streams a` and audible narration via `ffplay` per B4.

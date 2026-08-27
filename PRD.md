@@ -207,19 +207,46 @@ Each demo page shows:
 - Below: explanatory copy on azimuth in astronomy and navigation with an azimuth-altitude diagram.
 
 ### `/demos/colour-temperature-relationship`
-h1 "Colour-Temperature Relationship". Short blurb. Kelvin temperature slider with live color swatch display showing the resulting RGB color and hex value. Below: explanatory copy on black-body radiation and color temperature.
+- h1: "Colour-Temperature Relationship"
+- Blurb: Short blurb.
+- Layout: Kelvin temperature slider with live color swatch display showing the resulting RGB color and hex value.
+- Below: explanatory copy on black-body radiation and color temperature.
 
 ### `/demos/electric-field-line-simulator`
-h1 "Electric field line simulator". Short blurb. Canvas showing electric field lines around two point charges, with draggable charge positions and charge value sliders (−5 to +5) for each charge. Field lines redraw in real time as charges move or values change. Below: explanatory copy on electric fields and Coulomb's law.
+- h1: "Electric field line simulator"
+- Blurb: Short blurb.
+- Layout: Canvas showing electric field lines around two point charges.
+- Controls:
+  - Draggable charge positions and charge value sliders (−5 to +5) for each charge
+  - Field lines redraw in real time as charges move or values change
+- Below: explanatory copy on electric fields and Coulomb's law.
 
 ### `/demos/simple-pendulum`
-h1 "Simple pendulum". Short blurb. Canvas showing two pendulums side by side with length sliders (50–500 pixels) for each, plus Start and Reset buttons. Below: explanatory copy on simple harmonic motion and the pendulum period formula.
+- h1: "Simple pendulum"
+- Blurb: Short blurb.
+- Layout: Canvas showing two pendulums side by side.
+- Controls:
+  - Length sliders (50–500 pixels) for each
+  - Start and Reset buttons
+- Below: explanatory copy on simple harmonic motion and the pendulum period formula.
 
 ### `/demos/geodesics`
-h1 "Geodesics on the Earth". Short blurb. Interactive map showing two draggable markers connected by a red straight projected line and a purple great-circle geodesic curve, with readouts for origin coordinates, destination coordinates, and initial heading in degrees. Below: explanatory copy on geodesics and map projections.
+- h1: "Geodesics on the Earth"
+- Blurb: Short blurb.
+- Layout: Interactive map showing two draggable markers connected by a red straight projected line and a purple great-circle geodesic curve.
+- Controls:
+  - Dragging either marker repositions the origin or destination
+  - Readouts for origin coordinates, destination coordinates, and initial heading in degrees update in real time
+- Below: explanatory copy on geodesics and map projections.
 
 ### `/demos/capital-cities-map`
-h1 "Capital Cities Map". Short blurb. Interactive world map with circle markers at capital city locations; clicking a marker opens a popup showing the city name, country name, and a "Zoom In" button that centers the map on that capital at zoom level 8. Below: explanatory copy on capital cities.
+- h1: "Capital Cities Map"
+- Blurb: Short blurb.
+- Layout: Interactive world map with circle markers at capital city locations.
+- Controls:
+  - Clicking a capital city marker opens a popup showing the city name, country name, and a "Zoom In" button
+  - Clicking Zoom In centers the map on that capital at zoom level 8
+- Below: explanatory copy on capital cities.
 
 ### `/flashcards/flags-of-europe` and `/flashcards/us-states`
 - h1: "Flags of Europe flashcards" / "US States Map Flashcards flashcards" with short blurb; uppercase "Back to all Flashcards" breadcrumb with `keyboard_double_arrow_left` Material Symbol icon linking to `/flashcards` placed above the h1.
@@ -272,9 +299,27 @@ The Academo header mark is a three-color image asset:
 | Error | `#8a1f11` | Error and status messages |
 | Contact dotted | `#cccccc` | Contact form header separator, 1px dotted |
 
-Oscilloscope palettes — Default: bg `#5db1a2`, grid `#196156`, trace `#befde5`, halo `rgba(174,244,218,0.3)`. Dark: `#111` / `#666` / `#fff` / `rgba(255,255,255,0.3)`. Light: `#fdfdfd` / `#BBB` / `#111` / `rgba(0,0,0,0.3)`. Vintage: `#0d200f` / `#000` / `#dbffdf` / `rgb(120,226,154)`.
+Oscilloscope palettes:
 
-Vector colors — Blue `#4f81bd` (v1), Red `#d9534f` (v2), Purple `#8064a2` (resultant), Turquoise `#37d8e6` (difference), Green `#75c841` (cross), Orange `#f79646`, Magenta `#ff00ff`, Brown `#8f3938` (added entries cycle).
+| Palette | bg | grid | trace | halo |
+|---------|----|------|-------|------|
+| Default | `#5db1a2` | `#196156` | `#befde5` | `rgba(174,244,218,0.3)` |
+| Dark | `#111` | `#666` | `#fff` | `rgba(255,255,255,0.3)` |
+| Light | `#fdfdfd` | `#BBB` | `#111` | `rgba(0,0,0,0.3)` |
+| Vintage | `#0d200f` | `#000` | `#dbffdf` | `rgb(120,226,154)` |
+
+Vector colors:
+
+| Role | Hex |
+|------|-----|
+| Blue (v1) | `#4f81bd` |
+| Red (v2) | `#d9534f` |
+| Purple (resultant) | `#8064a2` |
+| Turquoise (difference) | `#37d8e6` |
+| Green (cross) | `#75c841` |
+| Orange | `#f79646` |
+| Magenta | `#ff00ff` |
+| Brown | `#8f3938` (added entries cycle) |
 
 ### Typography
 Font family "Open Sans", Arial, sans-serif at weights 400, 700, 800. Material Symbols Outlined for navigation and flashcard icons. Contact form uses Lucida Grande / Lucida Sans Unicode / Tahoma stack for labels and header, and Lucida Grande / Tahoma / Arial for inputs. Contact submit button uses Arial.
@@ -372,54 +417,22 @@ For the Homepage popular section dimensions, see §2 `/` — Homepage (popular d
 
 ---
 
-## 4. Verifiable interactions
+## 4. Acceptance Criteria
 
-- Clicking any internal navigation link updates the URL and renders the target page without full reload.
-- Typing in the search input filters demo cards by title, category, tags, or description substring and updates the result count live.
-- On `/search`, no cards or result heading appear until text is entered; typing shows the "Search results" h2 and filtered grid.
-- Submitting the contact form opens the user's mail client addressed to `hello@academo.org` with the form contents.
-- Clicking "Submit an idea" in the primary navigation renders the Submit an idea page with mailto link to `hello@academo.org` with subject "Academo demo idea".
-- Clicking Privacy Policy or Cookie Policy in the footer renders the full policy page with headings, definitions, and contact link back to `/contact`.
-- Clicking a category in the secondary navigation renders that category page with its description, subcategory filter pills, and alphabetically sorted demo cards for that category.
-- Clicking a subcategory pill on a category page navigates to the subcategory page showing its title, optional description, a back link to the parent category, and filtered demo cards.
-- Clicking a demo card navigates to that demo's detail page.
-- On flashcard demo pages, clicking the "Back to all Flashcards" breadcrumb navigates to `/flashcards`.
-- In Logic Gate Simulator, selecting a node type and clicking Add Node places a new node on the board.
-- Clicking an INPUT node's switch toggles its state and updates connected outputs visually.
-- Clicking a node's remove button deletes the node and clears its wire connections.
-- Dragging a node repositions it within the board and redraws connected wires during drag.
-- Dragging from an output port to an input port creates a wire connection.
-- Dragging away from a connected input port removes that wire.
-- Clicking Full Screen Mode expands the simulator to viewport; button toggles to Exit Full Screen.
-- In 3D Vector Plotter, clicking Draw renders the entered vectors as colored arrows in the 3D scene or shows an error naming the invalid field.
-- Clicking Add a Vector appends a new vector input with sequential id and next palette color.
-- Clicking Add an Expression appends a new expression input.
-- Clicking a vector endpoint in the 3D scene displays that vector's label and components.
-- Dragging in the 3D canvas rotates the view; scrolling zooms.
-- In 19 TET Keyboard, pressing a key in the SVG or on the computer keyboard plays the corresponding sine tone and highlights the key; releasing stops the tone.
-- In Virtual Oscilloscope, changing the Input select to Live requests microphone permission, switches to live audio, and disables frequency controls; Sine or Square switches to generated signal and enables frequency controls.
-- Checking Freeze Live Input holds the current waveform frame static.
-- Adjusting frequency, gain, timebase, volts/div, or offset controls rescales or repositions the waveform in real time.
-- Changing color scheme recolors the oscilloscope screen immediately.
-- In Amplitude Modulation, dragging the carrier or modulator frequency sliders updates the waveform display and audible output in real time; the Hear button toggles audio on and off.
-- In ROT-13, typing in the input field instantly shows the ROT-13 transformed output in the output field below.
-- In Hypocycloid animation, adjusting the inner or outer radius sliders redraws the hypocycloid curve; the Start/Stop button toggles the rolling animation.
-- In Estimating Pi Monte Carlo, clicking Start begins random point generation inside the unit square with live pi estimate and point counters updating; clicking Stop halts generation.
-- In Azimuth Calculator, dragging either map marker updates the azimuth angle and compass direction readouts in real time; the "Set marker to you current location" button uses browser geolocation to center the map and reposition markers.
-- In Colour-Temperature Relationship, dragging the Kelvin temperature slider updates the color swatch and hex RGB value in real time.
-- In Electric Field Line Simulator, dragging either charge circle repositions it on the canvas and field lines redraw in real time; adjusting either charge value slider (−5 to +5) changes the charge strength and redraws field lines.
-- In Simple Pendulum, adjusting either length slider changes that pendulum's length; clicking Start begins oscillation of both pendulums; clicking Reset stops animation and returns both to initial angle.
-- In Geodesics on the Earth, dragging either map marker repositions the origin or destination; the red projected straight line, purple great-circle geodesic, origin coordinates readout, destination coordinates readout, and heading readout all update in real time.
-- In Capital Cities Map, clicking a capital city marker opens a popup showing the city name, country name, and a Zoom In button; clicking Zoom In centers the map on that capital at zoom level 8.
-- In Flags of Europe, clicking the card flips between country name and flag image; the View All Terms table includes a Shown side toggle per row. In US States Map Flashcards, the table has Visible checkbox only, no Shown side control.
-- Clicking Previous or Next navigates flashcard decks; buttons disable at ends. Skip buttons jump to first or last.
-- Clicking Shuffle randomizes card order in flashcard decks.
-- Clicking Flip All Cards toggles every card's face in flashcard decks.
-- Clicking Reset restores all flashcard decks to initial state.
-- Clicking View All Terms opens a modal table; Close or backdrop click dismisses it.
-- Unchecking a Visible checkbox in the flashcard table hides that card from the carousel.
-- Clicking a Shown side button in the flashcard table flips that individual card.
-- Pressing Shift flips the current flashcard; ArrowLeft and ArrowRight navigate.
+The following verification matrix summarizes high-signal checks for the product. For per-surface interaction details, see §2 Product Surfaces where each surface documents its content, layout, and behavior; this section verifies outcomes without duplicating those descriptions.
+
+| Area | Verify |
+|------|--------|
+| Navigation | Client-side routing: clicking any internal link updates the URL and renders the target page without full reload; category/subcategory filters, demo-card navigation, and flashcard breadcrumb each resolve correctly |
+| Search | On `/search`, empty query shows no cards and no heading; typing filters by title/category/tags/description substring and shows `Search results` h2 with live result count; no-results shows `No matching demos. Try a broader subject or clear the search field.` |
+| Contact | Form Name/Email/message with required labels and native validation; submit opens mailto `hello@academo.org` |
+| Demos — Logic Gate | Add Node places node; INPUT toggle updates outputs; drag creates/removes wires; Full Screen Mode toggles correctly |
+| Demos — 3D Vector | Draw renders vectors or shows error naming invalid field; Add Vector/Expression appends inputs; 3D drag rotates and scroll zooms |
+| Demos — 19 TET | Pressing SVG or keyboard key plays sine tone with highlight; release stops tone |
+| Demos — Oscilloscope | Input Live requests mic and disables frequency controls; Sine/Square enables them; Freeze, gain, timebase, offsets, and color scheme each update waveform as described |
+| Demos — AM / ROT-13 / Hypocycloid / Pi / Azimuth / Colour / E-Field / Pendulum / Geodesics / Capitals | Each demo's primary interaction (AM frequency sliders + Hear toggle; ROT-13 live transform; Hypocycloid radius + Start/Stop; Pi Start/Stop with live estimate; Azimuth marker drag + geolocation; Colour Kelvin slider; E-Field drag + charge slider; Pendulum length + Start/Reset; Geodesics marker drag with readouts; Capitals marker popup + Zoom In) produces the described real-time updates |
+| Flashcards | Card flip between name/image; View All Terms modal with per-set table (Flags: 5 columns including Shown side; US States: 3 columns); Shuffle/Flip All/Reset/Previous/Next/Skip and Visibility/Shown side toggles; keyboard Shift/ArrowLeft/ArrowRight; empty-state `No visible flashcards` with disabled nav and 0/0 counter |
+| Global | Responsive breakpoints 950/760/520 collapse as specified; accessibility landmarks, aria-current, live regions, focus outline, and alt text as in §5; animations and transitions as in §3 |
 
 ---
 
