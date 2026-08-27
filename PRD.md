@@ -17,7 +17,9 @@ Centered h1 "Academo".
   - Heading: 1.5em size, 700 weight, normal line height, 0.83em vertical margin, centered, with link portion in title color at 70% opacity shifting to orange on hover
   - Card list:
     - Flex wrap centered, with negative 18px horizontal margin on container to offset card margins
-    - Each card list item is `calc(25% − 40px)` wide with 20px margin on all sides, producing 44px horizontal space between adjacent cards (20px right margin + 4px flex gap + 20px left margin) and 40px vertical space between rows (20px bottom + 20px top)
+    - Each card list item is `calc(25% − 40px)` wide with 20px margin on all sides
+      - Horizontal space between adjacent cards 44px (20px right margin + 4px flex gap + 20px left margin)
+      - Vertical space between rows 40px (20px bottom + 20px top)
     - Images use content-box sizing so 1px border sits outside 260px content width
 - Featured section: "Featured around the web" with four publication logos in a row
 
@@ -396,27 +398,8 @@ For the Homepage popular section dimensions, see §2 `/` — Homepage (popular d
 | ≤520px | Header lower side padding 20→12px. Main 92→100% width with 10px side padding. Tags left-align (intro stays centered). Footer left-aligns, text 15→13px. |
 
 ### Component dimensions
-- Logo mark image: 40px wide by 36px tall with 10px right margin and vertical-align middle, positioned 10px below bar top via absolute positioning on the logo anchor (30×28px with static positioning ≤760px)
-- Featured logos: max 160px wide in 84px minimum height containers with 20px margin
-- Logic gate node: 80×80px white card
-  - Ports: 12px circles
-  - Toolbar: 240px wide with 20px padding and 16px gap
-  - Fullscreen toolbar: fixed 32px from viewport edges (16px ≤950px) at 240px width (220px ≤950px) with shadow
-- Vector plotter, oscilloscope, and other split-layout demos: 1fr + 270px grid, 20px gap, stacking at 950px
-  - Canvas containers: min-height 280px with 1px `#d9d9d9` border
-- Range inputs: 10px track height with custom fill gradient
-  - Thumb: 16×18px
-- Flashcard image: 320×210
-  - Table thumbnail: 72×48
-- Gate symbol images: 100×100
-- 19 TET SVG: viewBox 0 0 184 120
-  - White keys: 23×120
-  - Black keys: 13×80
-  - Grey keys: 13×50
-- Keyboard mapping diagram: 500×324
-- Oscilloscope embed textarea: max 620px wide, 48px minimum height
-- Contact form header h2: 20.8px regular weight in Lucida stack with dotted separator below
-- Flashcards breadcrumb: 24px Material Symbol icon vertically aligned to text baseline with 4px right gap
+
+Per-surface component dimensions are documented with their Product Surfaces in §2 (Homepage popular grid, logic gate toolbar, flashcard image, 19 TET SVG, oscilloscope embed, contact header, breadcrumb) and via the shared grid rules in §3 Spacing and layout. The shared canvas-container and range-input dimensions above apply across the split-layout demos.
 
 ---
 
